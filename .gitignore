@@ -1,0 +1,12 @@
+# Log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+
+# Compiled JS
+public/bundle.js
+public/bundle.js.map
+
+# OSX folder metadata
+.DS_Store
