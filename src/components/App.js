@@ -11,7 +11,8 @@ class App extends Component {
         time: 0,
         shift: 0,
         interval: null,
-        splitTimes: []
+        splitTimes: [],
+        index: -1
     }
 
     start = () => {
@@ -36,15 +37,21 @@ class App extends Component {
         })
     }
 
-    reset = (time = 0, idx) => {
+    reset = (time = 0, idx, e) => {
         let { splitTimes } = this.state;
         this.setState({
-            isRunning: false,
             time,
             shift: 0,
-            interval: null
+            interval: null,
+            splitTimes: [],
+            index: -1
         })
-        if(idx) this.setState({ splitTimes: splitTimes.slice(0, idx) });
+        if(idx) {
+            this.setState({
+                splitTimes: splitTimes.slice(0, idx),
+                index: idx - 1
+            })
+        };
     }
 
     refresh = () => {
@@ -60,7 +67,7 @@ class App extends Component {
     }
 
     render() {
-        const { isRunning, time, splitTimes } = this.state;
+        const { isRunning, time, splitTimes, index } = this.state;
         const { start, split, stop, reset, refresh, elapsed } = this;
         return(
             <Fragment>
@@ -71,7 +78,7 @@ class App extends Component {
                 <button onClick={ () => stop() } disabled={ !isRunning }>Stop</button>
                 <button onClick={ () => reset() } disabled={ isRunning }>Reset</button>
                 <ul>
-                    <SplitTimeList splitTimes={ splitTimes } isRunning={ isRunning } reset={ reset }/>
+                    <SplitTimeList splitTimes={ splitTimes } isRunning={ isRunning } reset={ reset } index={ index }/>
                 </ul>
             </Fragment>
         )
