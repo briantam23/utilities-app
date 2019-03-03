@@ -9,7 +9,7 @@
     "webpack": "./node_modules/webpack/bin/webpack.js",
     "build": "npm run webpack -- --watch --mode=development",
     "start:dev": "npm run build & nodemon server/index.js --ignore dist --ignore src",
-    "test": "mocha ./test/*.test.js --watch --require babel-polyfill --compilers js:babel-register"
+    "test": "mocha ./test/*.test.js --watch --require babel-polyfill --require ignore-styles --compilers js:babel-register"
   },
   "keywords": [],
   "author": "",
@@ -43,6 +43,7 @@
     "css-loader": "^2.1.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "ignore-styles": "^5.0.1",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "mocha": "^5.2.0",

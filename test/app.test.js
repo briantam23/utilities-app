@@ -12,13 +12,17 @@ Enzyme.configure({ adapter });
 
 
 describe('<App/> component', () => {
-    let appWrapper, shallow;
+    let appWrapper;
 
     before('Create component', () => {
         appWrapper = shallow(<App/>);
     })
 
-    it('renders', () => {
-        expect(appWrapper.find('hr')).to.have.length(1);
+    it('renders a <h1>', () => {
+        expect(appWrapper.find('h1')).to.have.length(1);
+    })
+
+    it('renders an <ul>', () => {
+        expect(appWrapper.find('ul')).to.have.length(1);
     })
 })
