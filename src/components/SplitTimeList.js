@@ -16,7 +16,10 @@ const SplitTimeList = ({ splitTimes, isRunning, reset, index }) => (
                 }
                 </div>
                 <div className={ style.column }>
-                    <button onClick={ (e) => reset(splitTime, idx + 1, e) } disabled={ isRunning }> 
+                    <button 
+                        onClick={ (e) => reset(splitTime, idx + 1, e) } 
+                        disabled={ isRunning }
+                    > 
                         Reset time to this split
                     </button>
                 </div>

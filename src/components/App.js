@@ -72,14 +72,32 @@ class App extends Component {
         const { start, split, stop, reset } = this;
         return(
             <div className={ style.container }>
-                <h1 className={ style.header }>Stopwatch</h1>
-                <br/><br/>
-                <div className={ style.mainTime }>{ formatTime(time) }</div>
-                <br/><br/><br/>
-                <Buttons className={ style.buttons } isRunning={ isRunning } start={ start } split={ split } stop={ stop } reset={ reset }/>
+                <h1 className={ style.header }>
+                    Stopwatch
+                </h1>
+
+                <div className={ style.mainTime }>
+                    { formatTime(time) }
+                </div>
+
+                <Buttons 
+                    className={ style.buttons } 
+                    isRunning={ isRunning } 
+                    start={ start } 
+                    split={ split } 
+                    stop={ stop } 
+                    reset={ reset }
+                />
+
                 <br/>
+
                 <ul>
-                    <SplitTimeList isRunning={ isRunning } splitTimes={ splitTimes } index={ index } reset={ reset } />
+                    <SplitTimeList 
+                        isRunning={ isRunning } 
+                        splitTimes={ splitTimes } 
+                        index={ index } 
+                        reset={ reset } 
+                    />
                 </ul>
             </div>
         )
