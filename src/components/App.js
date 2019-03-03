@@ -75,8 +75,9 @@ class App extends Component {
                 <h1 className={ style.header }>Stopwatch</h1>
                 <br/><br/>
                 <div className={ style.mainTime }>{ formatTime(time) }</div>
-                <br/><br/>
+                <br/><br/><br/>
                 <Buttons className={ style.buttons } isRunning={ isRunning } start={ start } split={ split } stop={ stop } reset={ reset }/>
+                <br/>
                 <ul>
                     <SplitTimeList isRunning={ isRunning } splitTimes={ splitTimes } index={ index } reset={ reset } />
                 </ul>

@@ -38,11 +38,11 @@ describe('The React Components', () => {
             splitWrapper = shallow(<SplitTimeList splitTimes={ splitTimes } reset={ resetSpy } />);
         })
 
-        it('renders a <li> for each split time', () => {
-            expect(splitWrapper.find('li')).to.have.length(2);
+        it('renders a <h3> for each split time', () => {
+            expect(splitWrapper.find('h3')).to.have.length(2);
         })
 
-        it('when a <button> of a <li> is clicked, it invokes a function passed in', () => {
+        it('when a <button> is clicked, it invokes a function passed in', () => {
 
             // The function passed into button should not be called immediately.
             expect(resetSpy.calledOnce).to.be.false;
