@@ -89,8 +89,6 @@ class App extends Component {
                     reset={ reset }
                 />
 
-                <br/>
-
                 <ul>
                     <SplitTimeList 
                         isRunning={ isRunning } 
