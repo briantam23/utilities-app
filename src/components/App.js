@@ -8,19 +8,40 @@ class App extends Component {
     state = {
         isRunning: false,
         time: 0,
-        offset: 0
+        offset: 0,
+        interval: null,
+        splitTimes: []
     }
 
     start = () => {
-        const { isRunning } = this.state;
         const { refresh } = this;
-        if(!isRunning) {
-            this.setState({
-                isRunning: true,
-                offset: Date.now(),
-            })
-            setInterval(refresh, 10);
-        }
+        this.setState({
+            isRunning: true,
+            offset: Date.now(),
+            interval: setInterval(refresh, 10)
+        })
+    }
+
+    split = () => {
+        const { time, splitTimes } = this.state;
+        this.setState({ splitTimes: [...splitTimes, time] });
+    }
+
+    stop = () => {
+        const { interval } = this.state;
+        this.setState({ 
+            isRunning: false,
+            interval: clearInterval(interval)
+        })
+    }
+
+    reset = () => {
+        this.setState({
+            isRunning: false,
+            time: 0,
+            offset: 0,
+            interval: null
+        })
     }
 
     refresh = () => {
@@ -36,14 +57,23 @@ class App extends Component {
     }
 
     render() {
-        const { isRunning, time } = this.state;
-        const { start, refresh, elapsed } = this;
+        const { isRunning, time, splitTimes } = this.state;
+        const { start, split, stop, reset, refresh, elapsed } = this;
         return(
             <Fragment>
                 <h1 className={style.header}>Stopwatch</h1>
                 <div>{ formatTime(time) }</div>
-                <button onClick={ () => start() }>Start</button>
-                
+                <button onClick={ () => start() } disabled={ isRunning }>Start</button>
+                <button onClick={ () => split() } disabled={ !isRunning }>Split</button>
+                <button onClick={ () => stop() } disabled={ !isRunning }>Stop</button>
+                <button onClick={ () => reset() } disabled={ isRunning }>Reset</button>
+                <ul>
+                {
+                    splitTimes.map((splitTime, idx) => (
+                        <li key={ idx }>{ formatTime(splitTime) }</li>
+                    ))
+                }
+                </ul>
             </Fragment>
         )
     }
