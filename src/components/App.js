@@ -9,7 +9,7 @@ class App extends Component {
     state = {
         isRunning: false,
         time: 0,
-        offset: 0,
+        shift: 0,
         interval: null,
         splitTimes: []
     }
@@ -18,7 +18,7 @@ class App extends Component {
         const { refresh } = this;
         this.setState({
             isRunning: true,
-            offset: Date.now(),
+            shift: Date.now(),
             interval: setInterval(refresh, 10)
         })
     }
@@ -41,10 +41,10 @@ class App extends Component {
         this.setState({
             isRunning: false,
             time,
-            offset: 0,
+            shift: 0,
             interval: null
         })
-        if(idx) splitTimes = splitTimes.slice(0, idx);
+        if(idx) this.setState({ splitTimes: splitTimes.slice(0, idx) });
     }
 
     refresh = () => {
@@ -54,9 +54,9 @@ class App extends Component {
     }
 
     elapsed = () => {
-        const { offset } = this.state;
-        this.setState({ offset: Date.now() });
-        return Date.now() - offset;
+        const { shift } = this.state;
+        this.setState({ shift: Date.now() });
+        return Date.now() - shift;
     }
 
     render() {
