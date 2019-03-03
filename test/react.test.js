@@ -1,0 +1,57 @@
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { spy } from 'sinon';
+import { expect } from 'chai';
+
+import App from '../src/components/App';
+import SplitTimeList from '../src/components/SplitTimeList';
+
+
+const adapter = new Adapter();
+Enzyme.configure({ adapter });
+
+
+describe('The React Components', () => {
+    describe('<App/> component', () => {
+        let appWrapper;
+    
+        before('Create component', () => {
+            appWrapper = shallow(<App/>);
+        })
+    
+        it('renders a <h1>', () => {
+            expect(appWrapper.find('h1')).to.have.length(1);
+        })
+    
+        it('renders an <ul>', () => {
+            expect(appWrapper.find('ul')).to.have.length(1);
+        })
+    })
+    
+    describe('<SplitTimeList/> component', () => {
+        let splitWrapper, resetSpy;
+        let splitTimes = [1000, 2000]; 
+    
+        before('Create component', () => {
+            resetSpy = spy();
+            splitWrapper = shallow(<SplitTimeList splitTimes={ splitTimes } reset={ resetSpy } />);
+        })
+
+        it('renders a <li> for each split time', () => {
+            expect(splitWrapper.find('li')).to.have.length(2);
+        })
+
+        it('when clicked, invokes a function passed in', () => {
+
+            // The function passed into button should not be called immediately.
+            expect(resetSpy.calledOnce).to.be.false;
+
+            //This will trigger any onClick handlers registered to the component.
+            splitWrapper.find('button').at(1).simulate('click');
+
+            expect(resetSpy.calledOnce).to.be.true;
+        })
+
+    })
+})
