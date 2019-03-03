@@ -42,7 +42,7 @@ describe('The React Components', () => {
             expect(splitWrapper.find('li')).to.have.length(2);
         })
 
-        it('when clicked, invokes a function passed in', () => {
+        it('when a <button> of a <li> is clicked, it invokes a function passed in', () => {
 
             // The function passed into button should not be called immediately.
             expect(resetSpy.calledOnce).to.be.false;

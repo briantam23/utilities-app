@@ -1,6 +1,22 @@
-@nice-red: red;
-@light-red: @nice-red + #111;
+@steelblue: steelblue;
+//@light-red: @nice-red + #111;
+
+.container {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .header {
-  color: @light-red;
+  color: @steelblue;
+  font-size: 75px;
+}
+
+.mainTime {
+  padding: 16px 32px;
+  color: black;
+  outline-style: solid;
+  font-size: 55px;
 }
