@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import Buttons from './Buttons';
 import SplitTimeList from './SplitTimeList';
 import formatTime from '../utils';
 import style from './app.less';
@@ -68,17 +69,14 @@ class App extends Component {
 
     render() {
         const { isRunning, time, splitTimes, index } = this.state;
-        const { start, split, stop, reset, refresh, elapsed } = this;
+        const { start, split, stop, reset } = this;
         return(
             <Fragment>
-                <h1 className={style.header}>Stopwatch</h1>
+                <h1 className={ style.header }>Stopwatch</h1>
                 <div>{ formatTime(time) }</div>
-                <button onClick={ () => start() } disabled={ isRunning }>Start</button>
-                <button onClick={ () => split() } disabled={ !isRunning }>Split</button>
-                <button onClick={ () => stop() } disabled={ !isRunning }>Stop</button>
-                <button onClick={ () => reset() } disabled={ isRunning }>Reset</button>
+                <Buttons isRunning={ isRunning } start={ start } split={ split } stop={ stop } reset={ reset }/>
                 <ul>
-                    <SplitTimeList splitTimes={ splitTimes } isRunning={ isRunning } reset={ reset } index={ index }/>
+                    <SplitTimeList isRunning={ isRunning } splitTimes={ splitTimes } index={ index } reset={ reset } />
                 </ul>
             </Fragment>
         )
