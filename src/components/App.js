@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import SplitTimeList from './SplitTimeList';
 import formatTime from '../utils';
 import style from './app.less';
 
@@ -35,13 +36,15 @@ class App extends Component {
         })
     }
 
-    reset = () => {
+    reset = (time = 0, idx) => {
+        let { splitTimes } = this.state;
         this.setState({
             isRunning: false,
-            time: 0,
+            time,
             offset: 0,
             interval: null
         })
+        if(idx) splitTimes = splitTimes.slice(0, idx);
     }
 
     refresh = () => {
@@ -68,11 +71,7 @@ class App extends Component {
                 <button onClick={ () => stop() } disabled={ !isRunning }>Stop</button>
                 <button onClick={ () => reset() } disabled={ isRunning }>Reset</button>
                 <ul>
-                {
-                    splitTimes.map((splitTime, idx) => (
-                        <li key={ idx }>{ formatTime(splitTime) }</li>
-                    ))
-                }
+                    <SplitTimeList splitTimes={ splitTimes } isRunning={ isRunning } reset={ reset }/>
                 </ul>
             </Fragment>
         )
