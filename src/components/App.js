@@ -75,6 +75,10 @@ class App extends Component {
             <div className={ style.container }>
                 <Nav/>
 
+                <h1 className={ style.header }>
+                    Stopwatch
+                </h1>
+
                 <div className={ style.mainTime }>
                     { formatTime(time) }
                 </div>

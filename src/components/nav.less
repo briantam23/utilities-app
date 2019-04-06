@@ -3,12 +3,14 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: fadeout(#333, 85%);
-    margin-bottom: 110px;
+    background-color: #333;
+    /* margin-bottom: 110px; */
+    width: 100%
 }
 
 li {
     float: left;
+    border: gray;
 
     a {
         display: block;
@@ -16,13 +18,6 @@ li {
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size: 60px;
+        font-size: 20px;
     }
-    a:hover:not(.active) {
-        background-color: #111;
-    }
-}
-
-.active {
-    background-color: #4CAF50;
 }
