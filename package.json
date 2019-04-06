@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node ./server/index.js",
-    "postinstall": "npm run webpack",
+    "heroku-postbuild": "npm run webpack",
     "webpack": "./node_modules/webpack/bin/webpack.js",
     "build": "npm run webpack -- --watch --mode=development",
     "start:dev": "npm run build & nodemon server/index.js --ignore dist --ignore src",
