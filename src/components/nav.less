@@ -1,0 +1,28 @@
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: fadeout(#333, 85%);
+    margin-bottom: 110px;
+}
+
+li {
+    float: left;
+
+    a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 60px;
+    }
+    a:hover:not(.active) {
+        background-color: #111;
+    }
+}
+
+.active {
+    background-color: #4CAF50;
+}

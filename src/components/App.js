@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Nav from './Nav';
 import Buttons from './Buttons';
 import SplitTimeList from './SplitTimeList';
 import formatTime from '../utils';
@@ -72,9 +73,7 @@ class App extends Component {
         const { start, split, stop, reset } = this;
         return(
             <div className={ style.container }>
-                <h1 className={ style.header }>
-                    Stopwatch
-                </h1>
+                <Nav/>
 
                 <div className={ style.mainTime }>
                     { formatTime(time) }
