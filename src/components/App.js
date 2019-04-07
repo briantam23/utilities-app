@@ -1,14 +1,19 @@
 import React, { Fragment } from 'react';
 import Nav from './Nav';
-import Stopwatch from './stopwatch/Stopwatch';
+import Home from './Home';
+import Stopwatch from './stopwatch';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 
 const App = () => {
     return(
-        <Fragment>
-            <Nav/>
-            <Stopwatch/>
-        </Fragment>
+        <Router>
+            <Fragment>
+                <Nav/>
+                <Route exact path='/' render={ () => <Home/> }/>
+                <Route path='/stopwatch' render={ () => <Stopwatch/> }/>
+            </Fragment>
+        </Router>
     )
 }
 

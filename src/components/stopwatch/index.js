@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import style from './index.less';
 import Buttons from './Buttons';
 import SplitTimeList from './SplitTimeList';
 import formatTime from '../../utils';
-import style from './stopwatch.less';
 
 
 class Stopwatch extends Component {
