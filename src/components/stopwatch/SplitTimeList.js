@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import formatTime from '../utils';
+import formatTime from '../../utils';
 import style from './splitTimeList.less';
 
 
