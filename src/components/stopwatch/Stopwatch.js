@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from './index.less';
+import style from './stopwatch.less';
 import Buttons from './Buttons';
 import SplitTimeList from './SplitTimeList';
 import formatTime from '../../utils';

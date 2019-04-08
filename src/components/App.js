@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Home from './Home';
-import Stopwatch from './stopwatch';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import Stopwatch from './Stopwatch/Stopwatch';
+import Events from './Events/Events';
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
                 <Nav/>
                 <Route exact path='/' render={ () => <Home/> }/>
                 <Route path='/stopwatch' render={ () => <Stopwatch/> }/>
+                <Route path='/ticketmaster_events' render={ () => <Events/> }/>
             </Fragment>
         </Router>
     )

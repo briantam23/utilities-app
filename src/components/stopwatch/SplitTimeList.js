@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import formatTime from '../../utils';
 import style from './splitTimeList.less';
+import formatTime from '../../utils';
 
 
 const SplitTimeList = ({ splitTimes, isRunning, reset, index }) => (
