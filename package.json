@@ -51,5 +51,9 @@
     "supertest": "^3.4.2",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
+  },
+  "engines": {
+    "node": "11.2.0",
+    "npm": "6.5.0"
   }
 }
