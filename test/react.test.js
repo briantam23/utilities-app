@@ -3,9 +3,9 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { spy } from 'sinon';
 import { expect } from 'chai';
-import App from '../src/components/App';
-import Buttons from '../src/components/Buttons';
-import SplitTimeList from '../src/components/SplitTimeList';
+import App from '../src/components/stopwatch/Stopwatch';
+import Buttons from '../src/components/stopwatch/Buttons';
+import SplitTimeList from '../src/components/stopwatch/SplitTimeList';
 
 
 const adapter = new Adapter();
