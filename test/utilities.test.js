@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
-import formatTime, { padding } from '../src/utils';
+import formatTime, { padding } from '../src/utilities';
 
 
 describe('The Utility Functions', () => {
