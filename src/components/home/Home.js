@@ -4,7 +4,7 @@ import style from './home.less';
 
 const Home = () => (
     <h1 className={ style.homeContainer }>
-        Brian Tam's Utility App
+        Brian Tam's Utilities App
         <img src='../../public/img/profilePicture.jpg' alt='profile picture'/>
     </h1>
 )
