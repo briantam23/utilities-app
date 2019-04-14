@@ -28,7 +28,6 @@ class Events extends Component {
         return(
             <Router>
                 <Fragment>
-                    <h1>Ticketmaster Events</h1>
                     <NavBar genres={ genres }/>
                 </Fragment>
             </Router>

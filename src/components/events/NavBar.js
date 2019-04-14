@@ -6,36 +6,28 @@ import style from './navBar.less';
 class NavBar extends Component {
 
     state = {
-        listVisible: false
+        open: false
     }
 
-    show = () => {
-        this.setState({ listVisible: true });
-        document.addEventListener("click", this.hide);
-    }
-
-    hide = () => {
-        this.setState({ listVisible: false });
-        document.removeEventListener("click", this.hide);
+    handleClick = () => {
+        this.setState({ open: !this.state.open })
     }
 
     render() {
         const { genres } = this.props;
+        const { open } = this.state;
+        const { handleClick } = this;
         return (
-            <div className={ style.dropdownContainer + (this.state.listVisible ? " show" : "")}>
-                <div className={ style.dropdownDisplay + (this.state.listVisible ? " clicked" : "")} onClick={this.show}>
-                    <span>Genres</span>
-                </div>
+            <div className={ style.link }>
+                <span onClick={ handleClick }>Genres</span>
                 <div className={ style.dropdownList }>
-                    <div>
+                    <div className={ open ? 'style.open' : 'style.closed'}>
                         {   
                             genres.map((genre, idx) => (
                                 <div key={ idx }>
-                                    <span /* style={{ color: item.hex }} */>
-                                        <Link to={`/ticketmaster_events/genre/${genre}`}>
-                                            { genre }
-                                        </Link> 
-                                    </span>
+                                    <Link to={`/ticketmaster_events/genre/${genre}`}>
+                                        { genre }
+                                    </Link> 
                                 </div>
                             ))
                         }
