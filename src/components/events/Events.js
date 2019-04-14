@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import axios from 'axios'; 
 import { HashRouter as Router, Route } from 'react-router-dom';
+import axios from 'axios'; 
+import NavBar from './NavBar';
 
 
 class Events extends Component {
@@ -15,7 +16,6 @@ class Events extends Component {
             .then(events => this.setState({ events }))
     }
     render() {
-        console.log(process.env)
         const { events } = this.state;
         let genres = [];
         events.map(event => {
@@ -29,6 +29,7 @@ class Events extends Component {
             <Router>
                 <Fragment>
                     <h1>Ticketmaster Events</h1>
+                    <NavBar genres={ genres }/>
                 </Fragment>
             </Router>
         )

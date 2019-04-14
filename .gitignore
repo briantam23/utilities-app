@@ -1,6 +1,9 @@
 # API_KEY
 .env
 
+# Font Awesome
+font-awesome
+
 # Log
 npm-debug.log*
 

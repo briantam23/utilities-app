@@ -28,7 +28,7 @@ module.exports = {
             },
             { loader: "less-loader" }
           ]
-          }
+        }
       ]
     },
     plugins: [new Dotenv({ systemvars: true })]
