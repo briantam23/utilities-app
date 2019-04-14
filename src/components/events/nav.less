@@ -6,12 +6,16 @@
   }
   
   .navTitle {
-    width: 400px;
     padding: 10px;
-    text-align: center;
+    text-align: right;
     position: relative;
     cursor: pointer;
     font-size: 40px;
+    display: inline-block;
+    display: -moz-inline-box;
+    *display: inline; /* For IE7 */
+    zoom: 1; /* Trigger hasLayout */
+    width: 55%;
 
     a, a:visited, a:hover, a:active { 
       color: inherit;
@@ -22,9 +26,11 @@
   .link {
     .navTitle;
     
-    width: 125px;
-    font-size: 25px;
-    margin-top: 10px;
+    text-align: left;
+    font-size: 20px;
+    margin-top: 13px;
+    width: 45%;
+    margin-left: 20px;
 
     span { font-style: italic; }
   }
