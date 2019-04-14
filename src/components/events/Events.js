@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios'; 
-import NavBar from './NavBar';
+import Nav from './Nav';
 
 
 class Events extends Component {
@@ -28,7 +28,7 @@ class Events extends Component {
         return(
             <Router>
                 <Fragment>
-                    <NavBar genres={ genres }/>
+                    <Nav genres={ genres }/>
                 </Fragment>
             </Router>
         )

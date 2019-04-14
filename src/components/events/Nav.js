@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import style from './navBar.less';
+import style from './nav.less';
 
 
-class NavBar extends Component {
+class Nav extends Component {
 
     state = {
         open: false
@@ -17,6 +17,7 @@ class NavBar extends Component {
         const { genres } = this.props;
         const { open } = this.state;
         const { handleClick } = this;
+
         return (
             <div className={ style.nav }>
                 <div className={ style.navTitle }>
@@ -24,8 +25,10 @@ class NavBar extends Component {
                         <Link to={'/ticketmaster_events'}>Ticketmaster Events</Link>
                     </span>
                 </div>
+
                 <div className={ style.link }>
                     <span onClick={ handleClick }>Genres</span>
+                    
                     <div className={ open ? style.menuOpen : style.menuClosed }>
                         <div className={ style.linkItems }>
                         {   
@@ -46,4 +49,4 @@ class NavBar extends Component {
 }
 
 
-export default NavBar;
+export default Nav;
