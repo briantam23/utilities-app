@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import axios from 'axios';
-import API_KEY from '../../../apiKey'; 
+import axios from 'axios'; 
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 
@@ -11,11 +10,12 @@ class Events extends Component {
     }
 
     componentDidMount = () => {
-        return axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=410&apikey=${API_KEY}`)   //axios call to Ticketmaster API
+        return axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=410&apikey=${process.env.TICKETMASTER_API_KEY}`)   //axios call to Ticketmaster API
             .then(res => res.data._embedded.events)
             .then(events => this.setState({ events }))
     }
     render() {
+        console.log(process.env)
         const { events } = this.state;
         let genres = [];
         events.map(event => {
