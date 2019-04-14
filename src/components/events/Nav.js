@@ -30,17 +30,16 @@ class Nav extends Component {
                     <span onClick={ handleClick }>Genres ({ genres.length })</span>
                     
                     <div className={ open ? style.menuOpen : style.menuClosed }>
-                        <div className={ style.linkItems }>
-                        {   
-                            genres.map((genre, idx) => (
-                                <div key={ idx }>
-                                    <Link to={`/ticketmaster_events/genre/${genre}`}>
-                                        { genre }
-                                    </Link> 
-                                </div>
-                            ))
-                        }
-                        </div>
+                    {   
+                        genres.map((genre, idx) => (
+                            <div key={ idx } className={ style.linkItems }>
+                                <Link to={`/ticketmaster_events/genre/${genre}`}>
+                                    { genre }
+                                </Link>
+                                <br/> 
+                            </div>
+                        ))
+                    }
                     </div>
                 </div>
             </div>
