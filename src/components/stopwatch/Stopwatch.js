@@ -82,7 +82,6 @@ class Stopwatch extends Component {
                 </div>
 
                 <Buttons 
-                    className={ style.buttons } 
                     isRunning={ isRunning } 
                     start={ start } 
                     split={ split } 
