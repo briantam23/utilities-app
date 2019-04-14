@@ -5,6 +5,7 @@ const EventList = ({ events, genre }) => {
     if(genre) {
         events = events.filter(event => event.classifications[0].genre.name === genre)  //filter by genre if genre is selected
     }
+    console.log(events, genre)
     return (
         <div className='cardContainer'>
         {
