@@ -29,7 +29,6 @@ const EventList = ({ events, genre }) => {
                             { '$' + event.priceRanges[0].min.toFixed(2) + ' - $' + event.priceRanges[0].max.toFixed(2) }
                         </div>
                     </div>
-                    <br/>
                 </div>
             ): null)
         }
