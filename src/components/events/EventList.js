@@ -15,7 +15,11 @@ const EventList = ({ events, genre }) => {
                     <div className={ style.cardText }>
                         <Fragment>
                             <h3>
-                                <strong><a href={ event.url }>{ event.name }</a></strong>
+                                <strong>
+                                    <a href={ event.url } target="_blank" rel="noopener noreferrer">
+                                        { event.name }
+                                    </a>
+                                </strong>
                             </h3>
                         </Fragment>
                         <hr/>
