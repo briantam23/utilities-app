@@ -21,9 +21,7 @@ class Events extends Component {
         let genres = [];
         events.map(event => {
             let genre = event.classifications[0].genre.name;
-            if(genres.indexOf(genre) === -1) {
-                genres.push(genre)   //compiling all the different genres
-            }
+            if(genres.indexOf(genre) === -1) genres.push(genre)  //compiling all the different genres
         })
         console.log(events, genres)
         return(
