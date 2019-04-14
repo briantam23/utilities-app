@@ -3,7 +3,7 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
     devtool: 'source-map',
     output: {
-      path: __dirname + '/public',
+      path: __dirname + '/public/js',
       filename: 'bundle.js'
     },
     entry: ['babel-polyfill', './src/index.js'],
