@@ -43375,7 +43375,7 @@ var Home = function Home() {
             null,
             'A Single Page App created with React, LESS, & Express, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest).'
         ),
-        _react2.default.createElement('img', { src: '../../public/img/profilePicture.jpg', alt: 'profile picture' })
+        _react2.default.createElement('img', { src: '../../public/img/profile_picture.jpg', alt: 'profile picture' })
     );
 };
 
