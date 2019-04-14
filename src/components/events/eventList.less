@@ -1,0 +1,24 @@
+@width: 785px;
+
+.cardContainer { 
+    background-color: steelblue;
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: center;
+
+    .card { 
+        background-color: white;
+        width: @width; 
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        width: @width; 
+        max-width: 100%;
+        height: auto;
+        width: auto\9; /* ie8 */
+    }
+
+    a, a:visited, a:hover, a:active { color: #007bff; }
+}

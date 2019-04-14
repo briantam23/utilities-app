@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
+import style from './eventList.less';
 
 
 const EventList = ({ events, genre }) => {
     if(genre) {
         events = events.filter(event => event.classifications[0].genre.name === genre)  //filter by genre if genre is selected
     }
-    console.log(events, genre)
     return (
-        <div className='cardContainer'>
+        <div className={ style.cardContainer }>
         {
             events.map(event => event.priceRanges ? (
-                <div key={ event.id } className='card'>
+                <div key={ event.id } className={ style.card }>
                     <img src={ event.images[5].url } alt="Card image cap" />
                     <div>
                         <div>

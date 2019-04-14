@@ -23,7 +23,6 @@ class Events extends Component {
             let genre = event.classifications[0].genre.name;
             if(genres.indexOf(genre) === -1) genres.push(genre)  //compiling all the different genres
         })
-        console.log(events, genres)
         return(
             <Router>
                 <Fragment>
