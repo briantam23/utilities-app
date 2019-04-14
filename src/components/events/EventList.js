@@ -12,7 +12,7 @@ const EventList = ({ events, genre }) => {
             events.map(event => event.priceRanges ? (
                 <div key={ event.id } className={ style.card }>
                     <img src={ event.images[5].url } alt="Card image cap" />
-                    <div>
+                    <div className={ style.cardText }>
                         <div>
                             <h3>
                                 <strong><a href={ event.url }>{ event.name }</a></strong>
@@ -29,7 +29,6 @@ const EventList = ({ events, genre }) => {
                             { '$' + event.priceRanges[0].min.toFixed(2) + ' - $' + event.priceRanges[0].max.toFixed(2) }
                         </div>
                     </div>
-                    <div className='text-muted'/>
                     <br/>
                 </div>
             ): null)
