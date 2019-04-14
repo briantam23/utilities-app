@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios'; 
 import Nav from './Nav';
+import EventList from './EventList';
 
 
 class Events extends Component {
@@ -29,6 +30,7 @@ class Events extends Component {
             <Router>
                 <Fragment>
                     <Nav genres={ genres }/>
+                    <Route exact path='/ticketmaster_events' render={ () => <EventList events={ events }/> }/>
                 </Fragment>
             </Router>
         )
