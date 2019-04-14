@@ -1,9 +1,9 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import Nav from './Nav';
-import Home from './Home';
-import Stopwatch from './stopwatch/Stopwatch';
-import Events from './events/Events';
+import Nav from '../nav/Nav';
+import Home from '../home/Home';
+import Stopwatch from '../stopwatch/Stopwatch';
+import Events from '../events/Events';
 import style from './app.less'
 
 
