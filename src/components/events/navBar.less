@@ -5,33 +5,54 @@
     padding: 0 10px;
   }
   
-  /* .link {
-    width: 100px;
-    border-right: 1px solid gray;
+  .navTitle {
+    width: 400px;
     padding: 10px;
     text-align: center;
     position: relative;
     cursor: pointer;
-  } */
+    font-size: 40px;
+
+    a, a:visited, a:hover, a:active { 
+      color: inherit;
+      text-decoration: none; 
+    }
+  }
+
+  .link {
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 25px;
+    margin-top: 10px;
+
+    span { font-style: italic; }
+    
+    a, a:visited, a:hover, a:active {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
   
   .menuClosed {
     opacity: 0;
     position: absolute;
-    top: 40px; // same as your nav height
+    top: 40px; // same as nav height
     left: 0;
     background: #ededed;
     border: 1px solid gray;
     padding: 10px;
     text-align: center;
-    transition: all 1000ms ease;
+    /* transition: all 1000ms ease; */
   }
   
-  .menuOpen {
-    opacity: 1;
-  }
+  .menuOpen { opacity: 1; }
   
-  ul {
+  .linkItems {
     margin: 0;
     padding: 0;
     list-style: none;
+    font-size: 18px;
   }

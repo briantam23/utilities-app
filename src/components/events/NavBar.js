@@ -18,10 +18,16 @@ class NavBar extends Component {
         const { open } = this.state;
         const { handleClick } = this;
         return (
-            <div className={ style.link }>
-                <span onClick={ handleClick }>Genres</span>
-                <div className={ style.dropdownList }>
-                    <div className={ open ? 'style.open' : 'style.closed'}>
+            <div className={ style.nav }>
+                <div className={ style.navTitle }>
+                    <span>
+                        <Link to={'/ticketmaster_events'}>Ticketmaster Events</Link>
+                    </span>
+                </div>
+                <div className={ style.link }>
+                    <span onClick={ handleClick }>Genres</span>
+                    <div className={ open ? style.menuOpen : style.menuClosed }>
+                        <div className={ style.linkItems }>
                         {   
                             genres.map((genre, idx) => (
                                 <div key={ idx }>
@@ -31,6 +37,7 @@ class NavBar extends Component {
                                 </div>
                             ))
                         }
+                        </div>
                     </div>
                 </div>
             </div>
