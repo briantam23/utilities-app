@@ -1,4 +1,4 @@
-# Utilities App
+# ⏱ Utilities App
 
 ## Setting up
 
