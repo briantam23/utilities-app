@@ -8,5 +8,8 @@ const syncAndSeed = () => {
 
 module.exports = {
     syncAndSeed,
+    models: {
+        User
+    },
     conn
 }
