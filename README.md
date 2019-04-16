@@ -7,8 +7,10 @@
 ### Dependencies
 
 * [React](https://reactjs.org)
+* [Redux](https://redux.js.org)
 * [LESS](http://lesscss.org)
 * [Enzyme](https://airbnb.io/enzyme)
+* [PostgreSQL](https://www.postgresql.org)
 * [Mocha](https://mochajs.org)
 * [Express](https://expressjs.com)
 
