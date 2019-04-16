@@ -10,7 +10,7 @@
     "build": "npm run webpack -- --watch --mode=development",
     "start:dev": "npm run build & nodemon server/index.js --ignore dist --ignore src",
     "test": "mocha ./test/*.test.js --require babel-polyfill --require ignore-styles --compilers js:babel-register",
-    "test:dev": "mocha ./test/*.test.js --watch --require babel-polyfill --require ignore-styles --compilers js:babel-register"
+    "test:dev": "npm test -- --watch"
   },
   "keywords": [],
   "author": "",
