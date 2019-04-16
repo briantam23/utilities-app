@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/briantam23/utilities-app.svg?branch=master)](https://travis-ci.org/briantam23/utilities-app)
+
 # ⏱ Utilities App
 
 ## Setting up
