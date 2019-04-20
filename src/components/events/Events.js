@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import axios from 'axios'; 
 import Nav from './Nav';
 import EventList from './EventList';
@@ -24,13 +24,11 @@ class Events extends Component {
             if(genres.indexOf(genre) === -1) genres.push(genre)  //compiling all the different genres
         })
         return(
-            <Router>
-                <Fragment>
-                    <Nav genres={ genres }/>
-                    <Route exact path='/ticketmaster_events' render={ () => <EventList events={ events }/> }/>
-                    <Route path='/ticketmaster_events/genre/:genreName?' render={({ match }) => <EventList events={ events } genre={ match.params.genreName }/>}/>
-                </Fragment>
-            </Router>
+            <Fragment>
+                <Nav genres={ genres }/>
+                <Route exact path='/ticketmaster_events' render={ () => <EventList events={ events }/> }/>
+                <Route path='/ticketmaster_events/genre/:genreName?' render={({ match }) => <EventList events={ events } genre={ match.params.genreName }/>}/>
+            </Fragment>
         )
     }
 }

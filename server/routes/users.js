@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const { User } = require('../db').models;
-const { conn } = require('../db');
 
 
 //get users
