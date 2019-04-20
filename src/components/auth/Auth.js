@@ -27,24 +27,33 @@ class Auth extends Component {
         const { handleChange, handleLogin } = this;
         const { login, logout, auth, history } = this.props;
         return(
-            <div className={ styles.authContainer }>
-                <form className={ styles.authForm }>
-                    <input 
-                        onChange={ handleChange } 
-                        value={ username } 
-                        name='username' 
-                        placeholder='Username' 
-                        autoFocus 
-                        />
-                    <input 
-                        onChange={ handleChange }
-                        value={ password } 
-                        name='password' 
-                        placeholder='Password' 
-                        />
-                    <button onClick={ () => handleLogin() } className={ styles.authButton }>Login</button>
-                </form>
-            </div>
+            !auth.id ? (
+                <div className={ styles.authContainer }>
+                    <form className={ styles.authForm }>
+                        <input 
+                            onChange={ handleChange } 
+                            value={ username } 
+                            name='username' 
+                            placeholder='Username' 
+                            autoFocus 
+                            />
+                        <input 
+                            onChange={ handleChange }
+                            value={ password } 
+                            name='password' 
+                            placeholder='Password' 
+                            />
+                        <button onClick={ () => handleLogin() } className={ styles.authButton }>Login</button>
+                    </form>
+                </div>
+            ) : (
+                <div className={ styles.authContainer }>
+                    <div className={ styles.authForm }>
+                        <button onClick={ () => logout(history) }>Logout</button>
+                        <h3 style={{ display: 'inline-block', float: 'right' }} >Welcome { auth.name }!&emsp;</h3>
+                    </div>
+                </div>
+            )
         )
     }
 }
