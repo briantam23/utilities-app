@@ -83,4 +83,5 @@ const mapStateToProps = ({ auth }, { history }) => ({ auth, history });
 
 const mapDisptachToProps = ({ login, logout });
 
+
 export default connect(mapStateToProps, mapDisptachToProps)(Auth);

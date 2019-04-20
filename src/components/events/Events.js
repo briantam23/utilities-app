@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios'; 
 import Nav from './nav/Nav';
 import EventList from './eventList/EventList';
