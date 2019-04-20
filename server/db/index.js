@@ -5,9 +5,9 @@ const User = require('./models/User');
 const syncAndSeed = () => {
     conn.sync({ force: true })
         .then(() => Promise.all([
-            User.create({ name: 'brian', password: 'b' }),
-            User.create({ name: 'mike', password: 'm' }),
-            User.create({ name: 'johnny', password: 'j' })
+            User.create({ username: 'brian', password: 'Briantam23@' }),
+            User.create({ username: 'mike', password: 'Mike12#' }),
+            User.create({ username: 'johnny', password: 'Johnny34&' })
         ]))
 }
 

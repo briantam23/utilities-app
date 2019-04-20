@@ -11,8 +11,8 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', (req, res, next) => {
-    const { name, password } = req.body;
-    User.findOne({ where: { name, password } })
+    const { username, password } = req.body;
+    User.findOne({ where: { username, password } })
         .then(user => {
             if(!user) {
                 return next({ status: 401 });

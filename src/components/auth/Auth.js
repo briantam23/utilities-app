@@ -7,7 +7,7 @@ import { login, logout } from '../../store/actions/auth';
 class Auth extends Component {
 
     state = {
-        name: '',
+        username: '',
         password: '',
         error: ''
     }
@@ -23,7 +23,7 @@ class Auth extends Component {
     }
 
     render() {
-        const { name, password, error } = this.state;
+        const { username, password, error } = this.state;
         const { handleChange, handleLogin } = this;
         const { login, logout, auth, history } = this.props;
         return(
@@ -31,9 +31,9 @@ class Auth extends Component {
                 <form className={ styles.authForm }>
                     <input 
                         onChange={ handleChange } 
-                        value={ name } 
-                        name='name' 
-                        placeholder='Name' 
+                        value={ username } 
+                        name='username' 
+                        placeholder='Username' 
                         autoFocus 
                         />
                     <input 
