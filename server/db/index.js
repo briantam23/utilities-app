@@ -10,10 +10,12 @@ const syncAndSeed = () => {
             User.create({ username: 'Mike', password: 'Mike12#' }),
             User.create({ username: 'Johnny', password: 'Johnny34&' })
         ]))
-        .then(() => Promise.all([
-            Todo.create({ taskName: 'Code', assignee: 'Brian' }),
-            Todo.create({ taskName: 'Take Brazilian Jiu-Jitsu class', assignee: 'Brian' })
-        ]))
+        .then(() => {
+            return Promise.all([
+                Todo.create({ taskName: 'Code', assignee: 'Brian' }),
+                Todo.create({ taskName: 'Take Brazilian Jiu-Jitsu class', assignee: 'Brian' })
+            ])
+        })
 }
 
 

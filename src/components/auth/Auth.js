@@ -12,6 +12,13 @@ class Auth extends Component {
         error: ''
     }
 
+    componentDidUpdate = prevProps => {
+        const { auth } = this.props;
+        if(prevProps !== this.props) {
+            if(auth.id) this.setState({ username: '', password: '', error: '' });
+        }
+    }
+
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
     }

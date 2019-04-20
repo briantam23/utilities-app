@@ -7,13 +7,12 @@ const exchangeTokenForAuth = history => (
         const token = window.localStorage.getItem('token');
         if(!token) return;
         return axios.get('/api/auth', {
-            headers: {
-                authorization: token
-            }
+            headers: { authorization: token }
         })
             .then(res => res.data)
             .then(auth => {
                 dispatch(_setAuth(auth));
+                //history.push('/');
             })
             .catch(ex => window.localStorage.removeItem('token'))
     }
