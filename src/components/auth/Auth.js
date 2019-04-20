@@ -50,7 +50,11 @@ class Auth extends Component {
                                 />
                             <button onClick={ () => handleLogin() } className={ styles.authLogin }>Login</button>
                         {
-                            error ? <div className={ styles.errorMessage }>{ error }</div> : null
+                            error ? (
+                                <Fragment>
+                                    <div className={ styles.errorMessage }>{ error }</div> 
+                                </Fragment>
+                            ): null
                         }
                         </Fragment>
                     ) : (
