@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Order, LineItem, Product } = require('../db').models;
+const { User } = require('../db').models;
 const { conn } = require('../db');
 
 

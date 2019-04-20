@@ -7,7 +7,7 @@ import { login, logout } from '../../store/actions/auth';
 class Auth extends Component {
 
     state = {
-        username: '',
+        name: '',
         password: '',
         error: ''
     }
@@ -16,14 +16,14 @@ class Auth extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
     
-    handleLogin() {
+    handleLogin = () => {
         const { login, history } = this.props;
         login(this.state, history)
             .catch(() => this.setState({ error: 'Incorrect Username and/or Password. Please try again.' })) 
     }
 
     render() {
-        const { username, password, error } = this.state;
+        const { name, password, error } = this.state;
         const { handleChange, handleLogin } = this;
         const { login, logout, auth, history } = this.props;
         return(
@@ -31,9 +31,9 @@ class Auth extends Component {
                 <form className={ styles.authForm }>
                     <input 
                         onChange={ handleChange } 
-                        value={ username } 
-                        name='username' 
-                        placeholder='Username' 
+                        value={ name } 
+                        name='name' 
+                        placeholder='Name' 
                         autoFocus 
                         />
                     <input 
