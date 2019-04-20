@@ -5,6 +5,7 @@ import Auth from '../auth/Auth';
 import Home from '../home/Home';
 import Stopwatch from '../stopwatch/Stopwatch';
 import Events from '../events/Events';
+import Todos from '../todos/Todos';
 import style from './app.less'
 
 
@@ -17,6 +18,7 @@ const App = () => {
                 <Route exact path='/' render={ () => <Home/> }/>
                 <Route path='/stopwatch' render={ () => <Stopwatch/> }/>
                 <Route path='/ticketmaster_events' render={ () => <Events/> }/>
+                <Route path='/todos' render={ () => <Todos/> }/>
             </div>
         </Router>
     )
