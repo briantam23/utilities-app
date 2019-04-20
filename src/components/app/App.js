@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Nav from '../nav/Nav';
+import Auth from '../auth/Auth';
 import Home from '../home/Home';
 import Stopwatch from '../stopwatch/Stopwatch';
 import Events from '../events/Events';
@@ -12,6 +13,7 @@ const App = () => {
         <Router>
             <div className={ style.mainContainer }>
                 <Nav/>
+                <Auth/>
                 <Route exact path='/' render={ () => <Home/> }/>
                 <Route path='/stopwatch' render={ () => <Stopwatch/> }/>
                 <Route path='/ticketmaster_events' render={ () => <Events/> }/>
