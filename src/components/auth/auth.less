@@ -1,3 +1,5 @@
+@padding: 9px 18px;
+
 .authContainer {
     display: flex;
     
@@ -5,14 +7,22 @@
         margin-left: auto;
 
         input {
-            padding: 9px 18px;
+            padding: @padding;
             font-size: 20px;
             position: relative;
             top: 20px;
         }
 
-        .authButton {
-            padding: 9px 18px;
+        .authWelcome {
+            display: inline-block;
+            padding: @padding;
+            font-size: 30px;
+            position: relative;
+            top: 23px;
+        }
+
+        .authLogin {
+            padding: @padding;
             background-color: #007bff;
             color: white;
             border: none;
@@ -21,8 +31,13 @@
             outline-style: solid;
             position: relative;
             top: 20px;
-            
-            :hover { background-color: #014d9f; }
         }
+        .authLogin:hover { background-color: #014d9f; }
+
+        .authLogout {
+            .authLogin;
+            background-color: #DC3545;
+        }
+        .authLogout:hover { background-color: rgb(124, 29, 38); }
     }
 }

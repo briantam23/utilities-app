@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import styles from './auth.less';
 import { login, logout } from '../../store/actions/auth';
@@ -27,33 +27,40 @@ class Auth extends Component {
         const { handleChange, handleLogin } = this;
         const { login, logout, auth, history } = this.props;
         return(
-            !auth.id ? (
-                <div className={ styles.authContainer }>
-                    <form className={ styles.authForm }>
-                        <input 
-                            onChange={ handleChange } 
-                            value={ username } 
-                            name='username' 
-                            placeholder='Username' 
-                            autoFocus 
-                            />
-                        <input 
-                            onChange={ handleChange }
-                            value={ password } 
-                            name='password' 
-                            placeholder='Password' 
-                            />
-                        <button onClick={ () => handleLogin() } className={ styles.authButton }>Login</button>
-                    </form>
-                </div>
-            ) : (
-                <div className={ styles.authContainer }>
-                    <div className={ styles.authForm }>
-                        <button onClick={ () => logout(history) }>Logout</button>
-                        <h3 style={{ display: 'inline-block', float: 'right' }} >Welcome { auth.name }!&emsp;</h3>
-                    </div>
-                </div>
-            )
+            <div className={ styles.authContainer }>
+                <form className={ styles.authForm }>
+                {
+                    !auth.id ? (
+                        <Fragment>
+                            <input 
+                                onChange={ handleChange } 
+                                value={ username } 
+                                name='username' 
+                                placeholder='Username'
+                                size='20'
+                                autoFocus 
+                                />
+                            <input 
+                                onChange={ handleChange }
+                                value={ password } 
+                                name='password' 
+                                placeholder='Password'
+                                size='20'
+                                type='password'
+                                />
+                            <button onClick={ () => handleLogin() } className={ styles.authLogin }>Login</button>
+                        </Fragment>
+                    ) : (
+                        <Fragment>
+                            <div className={ styles.authWelcome }>
+                                <strong>Welcome { auth.username }!</strong>
+                            </div>
+                            <button onClick={ () => logout(history) } className={ styles.authLogout }>Logout</button>
+                        </Fragment>
+                    )
+                }
+                </form>
+            </div>
         )
     }
 }
