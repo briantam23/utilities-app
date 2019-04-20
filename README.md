@@ -23,8 +23,8 @@
 The `run start:dev` command will run both the `webpack` process (in watch mode) to build your client-side javascript files, and the Node process for your server with `nodemon`.
 
 * Login credentials: 
-> * Username - "brian"
-> * Password - "Briantam23@"
+    * Username - `brian`
+    * Password - `Briantam23@`
 
 * also created React, Express, and Function tests, which can be run with `npm run test`
 * also deployed to [Heroku](https://btam-utilities-app.herokuapp.com)
