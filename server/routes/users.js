@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
 
 //get user by ID
 router.get('/:userId', (req, res, next) => {
-    User.findById(req.params.userId)
+    User.findByPk(req.params.userId)
         .then(user => res.send(user))
         .catch(next)
 })

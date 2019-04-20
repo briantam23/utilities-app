@@ -22,7 +22,7 @@ app.use((req, res, next) => {
     catch(ex) {
         return next({ status: 401 });
     }
-    User.findById(id)
+    User.findByPk(id)
         .then(user => {
             req.user = user;
             next();

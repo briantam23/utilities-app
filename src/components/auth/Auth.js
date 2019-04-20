@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import styles from './auth.less';
+import { login, logout } from '../../store/actions/auth';
 
 
 class Auth extends Component {
@@ -13,10 +15,17 @@ class Auth extends Component {
     handleChange = e => {
         this.setState({ [e.target.name]: e.target.value });
     }
+    
+    handleLogin() {
+        const { login, history } = this.props;
+        login(this.state, history)
+            .catch(() => this.setState({ error: 'Incorrect Username and/or Password. Please try again.' })) 
+    }
 
     render() {
         const { username, password, error } = this.state;
-        const { handleChange } = this;
+        const { handleChange, handleLogin } = this;
+        const { login, logout, auth, history } = this.props;
         return(
             <div className={ styles.authContainer }>
                 <form className={ styles.authForm }>
@@ -33,12 +42,15 @@ class Auth extends Component {
                         name='password' 
                         placeholder='Password' 
                         />
-                    <button className={ styles.authButton }>Login</button>
+                    <button onClick={ () => handleLogin() } className={ styles.authButton }>Login</button>
                 </form>
             </div>
         )
     }
 }
 
+const mapStateToProps = ({ auth }, { history }) => ({ history, auth });
 
-export default Auth;
+const mapDisptachToProps = ({ login, logout });
+
+export default connect(mapStateToProps, mapDisptachToProps)(Auth);
