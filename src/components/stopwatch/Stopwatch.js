@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './stopwatch.less';
-import Buttons from './Buttons';
-import SplitTimeList from './SplitTimeList';
+import Buttons from './buttons/Buttons';
+import SplitTimeList from './splitTimeList/SplitTimeList';
 import formatTime from '../../utilities';
 
 

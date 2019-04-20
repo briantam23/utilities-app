@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { loadInitialTodos } from '../../store/actions/todos';
 import { Route } from 'react-router-dom';
 import style from './todos.less';
-import TodoList from './TodoList';
+import TodoList from './todoList/TodoList';
 import SingleTodo from './SingleTodo';
 
 

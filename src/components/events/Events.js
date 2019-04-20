@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router-dom';
 import axios from 'axios'; 
-import Nav from './Nav';
-import EventList from './EventList';
+import Nav from './nav/Nav';
+import EventList from './eventList/EventList';
 
 
 class Events extends Component {
