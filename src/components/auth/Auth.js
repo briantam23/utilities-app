@@ -49,6 +49,9 @@ class Auth extends Component {
                                 type='password'
                                 />
                             <button onClick={ () => handleLogin() } className={ styles.authLogin }>Login</button>
+                        {
+                            error ? <div className={ styles.errorMessage }>{ error }</div> : null
+                        }
                         </Fragment>
                     ) : (
                         <Fragment>
@@ -65,7 +68,7 @@ class Auth extends Component {
     }
 }
 
-const mapStateToProps = ({ auth }, { history }) => ({ history, auth });
+const mapStateToProps = ({ auth }, { history }) => ({ auth, history });
 
 const mapDisptachToProps = ({ login, logout });
 
