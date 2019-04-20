@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import styles from './auth.less';
+import style from './auth.less';
 import { login, logout } from '../../store/actions/auth';
 
 
@@ -27,45 +27,45 @@ class Auth extends Component {
         const { handleChange, handleLogin } = this;
         const { login, logout, auth, history } = this.props;
         return(
-            <div className={ styles.authContainer }>
-                <form className={ styles.authForm }>
-                {
-                    !auth.id ? (
-                        <Fragment>
-                            <input 
-                                onChange={ handleChange } 
-                                value={ username } 
-                                name='username' 
-                                placeholder='Username'
-                                size='20'
-                                autoFocus 
-                                />
-                            <input 
-                                onChange={ handleChange }
-                                value={ password } 
-                                name='password' 
-                                placeholder='Password'
-                                size='20'
-                                type='password'
-                                />
-                            <button onClick={ () => handleLogin() } className={ styles.authLogin }>Login</button>
-                        {
-                            error ? (
-                                <Fragment>
-                                    <div className={ styles.errorMessage }>{ error }</div> 
-                                </Fragment>
-                            ): null
-                        }
-                        </Fragment>
-                    ) : (
-                        <Fragment>
-                            <div className={ styles.authWelcome }>
-                                <strong>Welcome { auth.username }!</strong>
-                            </div>
-                            <button onClick={ () => logout(history) } className={ styles.authLogout }>Logout</button>
-                        </Fragment>
-                    )
-                }
+            <div className={ style.authContainer }>
+                <form className={ style.authForm }>
+            {
+                !auth.id ? (
+                    <Fragment>
+                        <input 
+                            onChange={ handleChange } 
+                            value={ username } 
+                            name='username' 
+                            placeholder='Username'
+                            size='20'
+                            autoFocus 
+                            />
+                        <input 
+                            onChange={ handleChange }
+                            value={ password } 
+                            name='password' 
+                            placeholder='Password'
+                            size='20'
+                            type='password'
+                            />
+                        <button onClick={ () => handleLogin() } className={ style.authLogin }>Login</button>
+                    {
+                        error ? (
+                            <Fragment>
+                                <div className={ style.errorMessage }>{ error }</div> 
+                            </Fragment>
+                        ): null
+                    }
+                    </Fragment>
+                ) : (
+                    <Fragment>
+                        <div className={ style.authWelcome }>
+                            <strong>Welcome { auth.username }!</strong>
+                        </div>
+                        <button onClick={ () => logout(history) } className={ style.authLogout }>Logout</button>
+                    </Fragment>
+                )
+            }
                 </form>
             </div>
         )

@@ -1,21 +1,32 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import { loadInitialTodos } from '../../store/actions/todos';
 import { Route } from 'react-router-dom';
-import styles from './todos.less';
+import style from './todos.less';
 import TodoList from './TodoList';
 import SingleTodo from './SingleTodo';
 
 
 class Todos extends Component {
+    
+    componentDidMount = () => {
+        const { loadInitialTodos } = this.props;
+        loadInitialTodos()
+    }
+
     render() {
         return(
-            <div className={ styles.todosContainer }>
+            <div className={ style.todosContainer }>
                 <h1>Todos</h1>
-                <Route exact path='/todos' component={ TodoList } />
-                <Route path='/todos/:todoId' component={ SingleTodo } />
+                <Route exact path='/todos' render={ () => <TodoList/> } />
+                <Route path='/todos/:todoId' render={ () => <SingleTodo/> } />
             </div>
         )
     }
 }
 
 
-export default Todos;
+const mapDispatchToProps = { loadInitialTodos };
+
+
+export default connect(null, mapDispatchToProps)(Todos);

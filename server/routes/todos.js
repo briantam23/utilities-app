@@ -4,19 +4,19 @@ const { Todo } = require('../db').models;
 
 router.get('/', (req, res, next) => {
   Todo.findAll()
-    .then(todos => res.json(todos))
+    .then(todos => res.send(todos))
     .catch(next)
 })
 
 router.get('/:todoId', (req, res, next) => {
   Todo.findByPk(req.params.todoId)
-    .then(todo => res.json(todo))
+    .then(todo => res.send(todo))
     .catch(next)
 })
 
 router.post('/', (req, res, next) => {
   Todo.create(req.body)
-    .then(todo => res.json(todo))
+    .then(todo => res.send(todo))
     .catch(next)
 })
 
@@ -29,9 +29,7 @@ router.put('/:todoId', (req, res, next) => {
 
 router.delete('/:todoId', (req, res, next) => {
   Todo.destroy({
-    where: {
-      id: req.params.todoId
-    }
+    where: { id: req.params.todoId }
   })
     .then(() => res.status(204).end())
     .catch(next)
