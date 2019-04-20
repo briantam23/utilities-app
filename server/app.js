@@ -1,13 +1,13 @@
 const express = require('express');
 const app = express();
-const volleyball = require('volleyball');
+//const volleyball = require('volleyball');
 const path = require('path');
 const { User } = require('./db').models;
 const jwt = require('jwt-simple');
 
 
 // Logging middleware
-app.use(volleyball);
+//app.use(volleyball);
 
 // Body parsing middleware
 app.use(require('body-parser').json());

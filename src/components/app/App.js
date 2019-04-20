@@ -14,7 +14,7 @@ const App = () => {
         <Router>
             <div className={ style.mainContainer }>
                 <Route render={ ({ history }) => <Auth history={ history }/> }/>
-                <Nav/>
+                <Route render={ () => <Nav/> }/>
                 <Route exact path='/' render={ () => <Home/> }/>
                 <Route path='/stopwatch' render={ () => <Stopwatch/> }/>
                 <Route path='/ticketmaster_events' render={ () => <Events/> }/>
