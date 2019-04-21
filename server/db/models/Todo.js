@@ -12,5 +12,13 @@ const Todo = conn.define('todos', {
     }
 })
 
+const todoHook = todo => {
+    const { assignee } = todo;
+    todo.assignee = assignee.charAt(0).toUpperCase() + assignee.slice(1);
+}
+
+Todo.beforeCreate((todo, options) => todoHook(todo));
+Todo.beforeUpdate((todo, options) => todoHook(todo));
+
 
 module.exports = Todo;
