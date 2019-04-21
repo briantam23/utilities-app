@@ -32,20 +32,24 @@ const uploadFile = (buffer, name, type) => {
 };
 
 // Define POST route
-app.post('/upload', (req, res) => {
+router.post('/upload', (req, res) => {
   const form = new multiparty.Form();
-    form.parse(req, async (err, fields, files) => {
-      if (err) throw new Error(err);
-      try {
-        const path = files.file[0].path;
-        const buffer = fs.readFileSync(path);
-        const type = fileType(buffer);
-        const timestamp = Date.now().toString();
-        const fileName = `bucketFolder/${timestamp}-lg`;
-        const data = await uploadFile(buffer, fileName, type);
-        return res.status(200).send(data);
-      } catch (err) {
-        return res.status(400).send(err);
-      }
-    });
+  form.parse(req, async (err, fields, files) => {
+    if (err) throw new Error(err);
+    try {
+      const path = files.file[0].path;
+      const buffer = fs.readFileSync(path);
+      const type = fileType(buffer);
+      const timestamp = Date.now().toString();
+      const fileName = `bucketFolder/${timestamp}-lg`;
+      const data = await uploadFile(buffer, fileName, type);
+      return res.status(200).send(data);
+    }
+    catch (err) {
+      return res.status(400).send(err);
+    }
+  });
 });
+
+
+module.exports = router;

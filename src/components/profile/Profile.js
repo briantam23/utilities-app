@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import style from './profile.less';
 import AWS from './aws/AWS';
 
 
 const Profile = () => (
-    <AWS/>
+    <Fragment>
+        <h1>My Profile</h1>
+        <AWS/>
+    </Fragment>
 )
 
 

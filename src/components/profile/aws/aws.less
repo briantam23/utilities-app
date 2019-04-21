@@ -1,0 +1,42 @@
+@margin: 50px 0px 0px 100px;
+@font-size: 20px;
+
+
+.awsForm {
+    display: flex;
+    flex-direction: column;
+
+    .awsLabel { 
+        margin: @margin; 
+        font-size: 30px; 
+        color: #FE5F55;
+    }
+
+    .awsUpload {
+        margin: @margin;
+        font-size: @font-size;
+    }
+
+    .awsButton { //import authLogin? 
+        margin-left: 100px;
+        padding: 11px 22px;
+        font-size: @font-size; 
+        width: 100px;
+        background-color: #0069d9; 
+    }
+    /* .awsButton:hover { background-color: #23933d; } */
+
+    .awsSuccess {
+        margin: 89px 0px 0px 100px;
+        padding: 11px 22px;
+        font-size: @font-size; 
+        background-color: #28a745; 
+        color: white;
+        width: 300px;
+    }
+
+    .awsError {
+        .awsSuccess;
+        background-color: #FE5F55;
+    }
+}
