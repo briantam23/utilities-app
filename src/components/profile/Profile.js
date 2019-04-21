@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React from 'react';
 import style from './profile.less';
+import AWS from './aws/AWS';
 
 
-class Profile extends Component {
-    render() {
-        return(
-            <hr/>
-        )
-    }
-}
+const Profile = () => (
+    <AWS/>
+)
 
 
 export default Profile;
