@@ -42,7 +42,7 @@ describe('The Express Server', () => {
         })
     })
     
-    describe('The `Schools` Route:', () => {
+    describe('The `Todos` Route:', () => {
 
         // First we clear the database before beginning each run
         before(() => {
@@ -67,6 +67,42 @@ describe('The Express Server', () => {
     
                 expect(res.body).to.be.an.instanceOf(Array);
                 expect(res.body).to.have.length(0);
+            })
+
+            // Save a Todo in the database using our model and then retrieve it
+            it('returns a Todo if there is one in the DB', async () => {
+
+                await Todo.create({
+                    taskName: 'Brazilian Jiu-Jitsu',
+                    assignee: 'Brian'
+                })
+
+                const res = await agent 
+                    .get('/api/todos')
+                    .expect(200)
+
+                expect(res.body).to.be.an.instanceOf(Array);
+                expect(res.body[0].assignee).to.equal('Brian');
+            })
+
+            it('returns another Todo if there is one in the DB', async() => {
+
+                await Todo.create({
+                    taskName: 'Brazilian Jiu-Jitsu',
+                    assignee: 'Brian'
+                })
+                await Todo.create({
+                    taskName: 'Muay Thai', 
+                    assignee: 'Mike' 
+                })
+    
+                const res = await agent
+                    .get('/api/todos')
+                    .expect(200)
+    
+                expect(res.body).to.be.an.instanceOf(Array);
+                expect(res.body[0].assignee).to.equal('Brian');
+                expect(res.body[1].assignee).to.equal('Mike');
             })
         })
     })
