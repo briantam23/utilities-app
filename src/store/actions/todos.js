@@ -14,7 +14,7 @@ export const loadInitialTodos = () => (
     )
 )
 
-const _createTodo = todo => ({
+export const _createTodo = todo => ({
     type: CREATE_TODO,
     todos: todo
 })
