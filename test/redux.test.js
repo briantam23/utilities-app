@@ -22,4 +22,35 @@ describe('The `Todo` Redux store', () => {
             })
         })
     })
+
+    describe('todosReducer', () => {
+
+        let testingStore;
+        beforeEach('Create testing store from reducer', () => {
+            testingStore = createStore(todosReducer);
+        })
+
+        it('has an initial state as an empty array', () => {
+
+            const currentStoreState = testingStore.getState();
+
+            expect(currentStoreState).to.be.deep.equal([]);
+        })
+
+        it('reduces on CREATE_TODO (without mutating previous state)', () => {
+
+            const prevState = testingStore.getState();
+
+            testingStore.dispatch({
+                type: CREATE_TODO,
+                todos: todo
+            })
+
+            const newState = testingStore.getState();
+
+            expect(newState.length).to.be.equal(prevState.length + 1);
+            expect(newState[newState.length - 1]).to.be.deep.equal(todo);
+            expect(newState).to.not.be.equal(prevState);
+        })
+    })
 })
