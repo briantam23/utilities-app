@@ -14,23 +14,17 @@ const EventList = ({ events, genre }) => {
                 <img src={ event.images[5].url } alt="Card image cap" />
                 <div className={ style.cardText }>
                     <Fragment>
-                        <h3>
-                            <strong>
-                                <a href={ event.url } target="_blank" rel="noopener noreferrer">
-                                    { event.name }
-                                </a>
-                            </strong>
+                        <h3>                            
+                            <a href={ event.url } target="_blank" rel="noopener noreferrer">
+                                { event.name }
+                            </a>
                         </h3>
                     </Fragment>
                     <hr/>
-                    <Fragment>
-                        <strong>Date: </strong>
-                        { event.dates.start.localDate }
-                    </Fragment>
+                    <Fragment>Date: { event.dates.start.localDate }</Fragment>
                     <hr/>
                     <Fragment>
-                        <strong>Price Range: </strong>
-                        { '$' + event.priceRanges[0].min.toFixed(2) + ' - $' + event.priceRanges[0].max.toFixed(2) }
+                        Price Range: { '$' + event.priceRanges[0].min.toFixed(2) + ' - $' + event.priceRanges[0].max.toFixed(2) }
                     </Fragment>
                 </div>
             </div>

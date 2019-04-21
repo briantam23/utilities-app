@@ -36,7 +36,6 @@ class Nav extends Component {
                             <Link to={`/ticketmaster-events/genre/${genre}`}>
                                 { genre }
                             </Link>
-                            <br/> 
                         </div>
                     ))
                 }

@@ -82,7 +82,7 @@ class Auth extends Component {
                 ) : (
                     <Fragment>
                         <div className={ style.authWelcome }>
-                            <strong>Welcome { auth.username }!</strong>
+                            Welcome { auth.username }!
                         </div>
                         <button className={ style.authLogout }>Logout</button>
                     </Fragment>
