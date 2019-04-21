@@ -25,7 +25,6 @@
         }
 
         .authLogin {
-            display: inline-block;
             padding: 11px 22px;
             background-color: #007bff;
             color: white;
@@ -33,16 +32,26 @@
             transition: all 1s ease;
             position: relative;
             top: 20px;
+            margin-left: 10px;
+            cursor: pointer;
         }
         .authLogin:hover { background-color: #014d9f; }
+        .authLogin:disabled { 
+            background-color: #007bff; 
+            cursor: default;
+        }
 
         .errorMessage {
+            display: inline-block;
             background-color: red;
             color: white;
             padding: 14px 28px;
             text-align: right;
-            margin: 20px 7px 0px 0px;
+            margin-right: 20px;
             font-size: 19px;
+            position: relative;
+            top: 20px;
+            cursor: pointer;
         }
 
         .authLogout {

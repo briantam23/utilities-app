@@ -23,32 +23,48 @@ class Auth extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
     
-    handleLogin = () => {
-        const { login, history } = this.props;
-        login(this.state, history)
-            .catch(() => this.setState({ 
-                username: '', 
-                password: '',
-                error: 'Incorrect Username and/or Password. Please try again.' 
-            })) 
+    handleAuth = e => {
+        e.preventDefault();
+        const { auth, login, logout, history } = this.props;
+        
+        !auth.id ? (
+            login(this.state, history)
+                .catch(() => this.setState({ 
+                    username: '', 
+                    password: '',
+                    error: 'Incorrect Username and/or Password. Please try again. (X)' 
+                })) 
+        ) : logout(history)
+    }
+
+    handleClearError = () => {
+        this.setState({ error: '' });
     }
 
     render() {
         const { username, password, error } = this.state;
-        const { handleChange, handleLogin } = this;
-        const { login, logout, auth, history } = this.props;
+        const { handleChange, handleAuth, handleClearError } = this;
+        const { auth, history } = this.props;
         return(
             <div className={ style.authContainer }>
-                <form className={ style.authForm }>
+                <form onSubmit={ handleAuth } className={ style.authForm }>
             {
                 !auth.id ? (
                     <Fragment>
+                    {
+                        error ? (
+                            <div onClick={ () => handleClearError() } className={ style.errorMessage }>
+                                <strong>{ error }</strong>
+                            </div> 
+                        ): null
+                    }
                         <input 
                             onChange={ handleChange } 
                             value={ username } 
                             name='username' 
                             placeholder='Username'
                             size='20'
+                            required
                             autoFocus 
                             />
                         <input 
@@ -57,25 +73,17 @@ class Auth extends Component {
                             name='password' 
                             placeholder='Password'
                             size='20'
+                            required
                             type='password'
                             />
-                        <div onClick={ handleLogin } className={ style.authLogin }>Login</div>
-                    {
-                        error ? (
-                            <Fragment>
-                                <div className={ style.errorMessage }>
-                                    <strong>{ error }</strong>
-                                </div> 
-                            </Fragment>
-                        ): null
-                    }
+                        <button disabled={ !username && !password } className={ style.authLogin }>Login</button>
                     </Fragment>
                 ) : (
                     <Fragment>
                         <div className={ style.authWelcome }>
                             <strong>Welcome { auth.username }!</strong>
                         </div>
-                        <button onClick={ () => logout(history) } className={ style.authLogout }>Logout</button>
+                        <button className={ style.authLogout }>Logout</button>
                     </Fragment>
                 )
             }
