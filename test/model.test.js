@@ -38,5 +38,63 @@ describe('The `Todo` model:', () => {
             expect(savedTodo.taskName).to.equal('Muay Thai');
             expect(savedTodo.assignee).to.equal('Brian');
         })
+
+        it('requires `taskName`', async () => {
+            todo.taskName = null;
+
+            let result, error;
+            try {
+                result = await todo.validate();
+            } catch(err) {
+                error = err;
+            }
+
+            if(result) throw Error('validation should fail when name is null');
+
+            expect(error).to.be.an.instanceOf(Error);
+        })
+
+        it('requires `taskName` (strict)', async () => {
+
+            todo.taskName = '';
+
+            let result, error;
+            try {
+                result = await todo.validate();
+            } catch(err) {
+                error = err;
+            }
+
+            if(result) throw Error('validation should fail when address is an empty string');
+
+            expect(error).to.be.an.instanceOf(Error);
+            expect(error.message).to.contain('Validation error');
+        })
+    })
+
+    describe('capitalization hooks', () => {
+
+
+
+        it('capitalizes before creating', async () => {
+
+            const createdTodo = await Todo.create({
+                taskName: 'muay thai',
+                assignee: 'brian'
+            })
+
+            expect(createdTodo.assignee).to.equal('Brian');
+        })
+
+        it('capitalizes before updating', async () => {
+
+            const createdTodo = await Todo.create({
+                taskName: 'muay thai',
+                assignee: 'brian'
+            })
+
+            const updatedTodo = await createdTodo.update({ assignee: 'johnny' });
+            expect(updatedTodo.assignee).to.equal('Johnny');
+        })
     })
 })
