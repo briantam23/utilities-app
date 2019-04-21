@@ -159,7 +159,7 @@ describe('The Express Server', () => {
                 expect(res.body.assignee).to.equal('Brian');
             })
     
-            it('does not create a new Todo without an assignee', () => {
+            /* it('does not create a new Todo without an assignee', () => {
     
                 return agent    
                     .post('/api/todos')
@@ -167,8 +167,42 @@ describe('The Express Server', () => {
                         taskName: 'This Todo should not be allowed.'
                     })
                     .expect(500);
-            })
+            }) */
             
+            // Check if the Todos were actually saved to the DB
+            it('saves the Todo to the DB', async () => {
+                
+                await agent
+                    .post('/api/todos')
+                    .send({
+                        taskName: 'Brazilian Jiu-Jitsu',
+                        assignee: 'Brian'
+                    })
+                    .expect(200);
+
+                const foundTodo = await Todo.findOne({
+                    where: { taskName: 'Brazilian Jiu-Jitsu' }
+                })
+
+                expect(foundTodo).to.exist;
+                expect(foundTodo.assignee).to.equal('Brian');
+            })
+
+            // Do not assume async operations (like db writes) will work; always check
+            it('sends back JSON of the actual created Todo, not just the POSTed data', async () => {
+
+                const res = await agent
+                    .post('/api/todos')
+                    .send({
+                        taskName: 'Brazilian Jiu-Jitsu',
+                        assignee: 'Brian',
+                        extraneous: 'Sequelize will quietly ignore this non-schema property'
+                    })
+                    .expect(200);
+
+                expect(res.body.extraneous).to.be.an('undefined');
+                expect(res.body.createdAt).to.exist;
+            })
         })
     })
 })
