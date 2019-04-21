@@ -6,6 +6,7 @@ import Home from '../home/Home';
 import Stopwatch from '../stopwatch/Stopwatch';
 import Events from '../events/Events';
 import Todos from '../todos/Todos';
+import Profile from '../profile/Profile';
 import style from './app.less'
 
 
@@ -17,8 +18,9 @@ const App = () => {
                 <Route render={ () => <Nav/> }/>
                 <Route exact path='/' render={ () => <Home/> }/>
                 <Route path='/stopwatch' render={ () => <Stopwatch/> }/>
-                <Route path='/ticketmaster_events' render={ () => <Events/> }/>
+                <Route path='/ticketmaster-events' render={ () => <Events/> }/>
                 <Route path='/todos' render={ () => <Todos/> }/>
+                <Route path='/my-profile' render={ () => <Profile/> }/>
             </div>
         </Router>
     )

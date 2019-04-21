@@ -7,10 +7,10 @@ const Nav = () => (
     <ul className={ style.nav }>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/stopwatch'>Stopwatch</Link></li>
-        <li><Link to='/ticketmaster_events'>Events</Link></li>
+        <li><Link to='/ticketmaster-events'>Events</Link></li>
         <li><Link to='/todos'>Todos</Link></li>
         <li><a href='#'>Air Quality</a></li>
-        <li><a href='#'>My Profile</a></li>
+        <li><Link to='/my-profile'>My Profile</Link></li>
         {/* <li><a href='#'>Timer</a></li>
         <li><a href='#'>Calculator</a></li>
         <li><a href='#'>World Clock</a></li> */}

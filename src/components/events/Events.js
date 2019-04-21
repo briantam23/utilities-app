@@ -26,8 +26,8 @@ class Events extends Component {
         return(
             <Fragment>
                 <Nav genres={ genres }/>
-                <Route exact path='/ticketmaster_events' render={ () => <EventList events={ events }/> }/>
-                <Route path='/ticketmaster_events/genre/:genreName?' render={({ match }) => <EventList events={ events } genre={ match.params.genreName }/>}/>
+                <Route exact path='/ticketmaster-events' render={ () => <EventList events={ events }/> }/>
+                <Route path='/ticketmaster-events/genre/:genreName?' render={({ match }) => <EventList events={ events } genre={ match.params.genreName }/>}/>
             </Fragment>
         )
     }

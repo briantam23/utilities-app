@@ -22,7 +22,7 @@ class Nav extends Component {
             <div className={ style.nav }>
                 <div className={ style.navTitle }>
                     <span>
-                        <Link to={'/ticketmaster_events'}>Ticketmaster Events</Link>
+                        <Link to={'/ticketmaster-events'}>Ticketmaster Events</Link>
                     </span>
                 </div>
 
@@ -33,7 +33,7 @@ class Nav extends Component {
                 {   
                     genres.map((genre, idx) => (
                         <div key={ idx } className={ style.linkItems }>
-                            <Link to={`/ticketmaster_events/genre/${genre}`}>
+                            <Link to={`/ticketmaster-events/genre/${genre}`}>
                                 { genre }
                             </Link>
                             <br/> 
