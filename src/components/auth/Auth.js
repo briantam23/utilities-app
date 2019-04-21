@@ -55,7 +55,7 @@ class Auth extends Component {
                             size='20'
                             type='password'
                             />
-                        <button onClick={ () => handleLogin() } className={ style.authLogin }>Login</button>
+                        <div onClick={ handleLogin } className={ style.authLogin }>Login</div>
                     {
                         error ? (
                             <Fragment>
