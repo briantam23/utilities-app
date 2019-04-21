@@ -45,6 +45,7 @@ app.use((req, res, next) => {
 app.use('/api/auth', require('./routes/auth'));
 //app.use('/api/users', require('./routes/users'));
 app.use('/api/todos', require('./routes/todos'));
+app.use('/api/aws', require('./routes/aws'));
 
 
 // Error catching endware
