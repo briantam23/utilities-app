@@ -159,7 +159,7 @@ describe('The Express Server', () => {
                 expect(res.body.assignee).to.equal('Brian');
             })
     
-            /* it('does not create a new Todo without an assignee', () => {
+            it('does not create a new Todo without an assignee', () => {
     
                 return agent    
                     .post('/api/todos')
@@ -167,7 +167,7 @@ describe('The Express Server', () => {
                         taskName: 'This Todo should not be allowed.'
                     })
                     .expect(500);
-            }) */
+            })
             
             // Check if the Todos were actually saved to the DB
             it('saves the Todo to the DB', async () => {
@@ -202,6 +202,54 @@ describe('The Express Server', () => {
 
                 expect(res.body.extraneous).to.be.an('undefined');
                 expect(res.body.createdAt).to.exist;
+            })
+        })
+
+        describe('PUT /api/todos/:id', () => {
+
+            let todo;
+    
+            beforeEach(async() => {
+                todo = await Todo.create({
+                    taskName: 'Brazilian Jiu-Jitsu',
+                    assignee: 'Brian'
+                })
+            })
+
+            it('updates a Todo', async() => {
+
+                const res = await agent 
+                    .put('/api/todos/' + todo.id)
+                    .send({
+                        taskName: 'Coding'
+                    })
+                    .expect(200);
+    
+                expect(res.body.id).to.not.be.an('undefined');
+                expect(res.body.taskName).to.equal('Coding');
+                expect(res.body.assignee).to.equal('Brian');
+            })
+
+            it('saves updates to the DB', async() => {
+
+                await agent 
+                    .put('/api/todos/' + todo.id)
+                    .send({
+                        taskName: 'Muay Thai'
+                    })
+    
+                const foundTodo = await Todo.findByPk(todo.id);
+    
+                expect(foundTodo).to.exist;
+                expect(foundTodo.taskName).to.equal('Muay Thai');
+            })
+    
+            it('gets 500 for invalid update', () => {
+    
+                return agent
+                    .put('/api/todos/' + todo.id)
+                    .send({ assignee: null })
+                    .expect(500);
             })
         })
     })

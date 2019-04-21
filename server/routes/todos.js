@@ -26,7 +26,7 @@ router.post('/', (req, res, next) => {
 router.put('/:todoId', (req, res, next) => {
   Todo.findByPk(req.params.todoId)
     .then(todo => todo.update(req.body))
-    .then(todo => res.json(todo))
+    .then(todo => res.send(todo))
     .catch(next)
 })
 

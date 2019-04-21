@@ -48,7 +48,7 @@ app.use('/api/todos', require('./routes/todos'));
 
 // Error catching endware
 app.use((err, req, res, next) => {
-    console.log(err);
+    //console.log(err);
     res.status(err.status || 500).send({ error: err.message });
 })
 
