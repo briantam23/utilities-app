@@ -3,6 +3,10 @@ const User = require('./models/User');
 const Todo = require('./models/Todo');
 
 
+Todo.belongsTo(User);
+User.hasMany(Todo);
+
+
 const syncAndSeed = () => {
     conn.sync({ force: true })
         .then(() => Promise.all([

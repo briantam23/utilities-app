@@ -6,7 +6,7 @@ const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 chai.use(sinonChai);
 
-const { Todo } = require('../server/db').models;
+const { Todo, User } = require('../server/db').models;
 const { conn } = require('../server/db');
 
 
@@ -26,9 +26,12 @@ describe('The `Todo` model:', () => {
         })
     })
 
-    // Also, we empty the table after each spec
+    // Also, we empty the tables after each spec
     afterEach(() => {
-        return Todo.truncate({ cascade: true })
+        return Promise.all([
+            Todo.truncate({ cascade: true }),
+            User.truncate({ cascade: true })
+        ])
     })
 
     describe('attributes definition', () => {
@@ -72,9 +75,33 @@ describe('The `Todo` model:', () => {
         })
     })
 
+    describe('associations', () => {
+        it('belongs to User', async () => {
+
+            const creatingTodo = await Todo.create({ 
+                taskName: 'Muay Thai', 
+                assignee: 'Mike' 
+            })
+            const creatingUser = await User.create({ 
+                username: 'Brian', 
+                password: 'Briantam23@' 
+            })
+
+            const [createdTodo, createdUser] = await Promise.all([creatingTodo, creatingUser]);
+
+            await createdUser.setTodos(createdTodo);
+
+            const foundUser = await User.findOne({
+                where: { username: 'Brian' },
+                include: { model: Todo }
+            })
+
+            expect(foundUser.todos).to.exist;
+            expect(foundUser.todos[0].taskName).to.equal('Muay Thai');
+        })
+    })
+
     describe('capitalization hooks', () => {
-
-
 
         it('capitalizes before creating', async () => {
 
