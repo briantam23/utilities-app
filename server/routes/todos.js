@@ -34,7 +34,10 @@ router.delete('/:todoId', (req, res, next) => {
   Todo.destroy({
     where: { id: req.params.todoId }
   })
-    .then(() => res.status(204).end())
+    .then(err => {
+      if(err === 0) return res.sendStatus(500);
+      res.sendStatus(204);
+    })
     .catch(next)
 })
 

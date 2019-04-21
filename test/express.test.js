@@ -252,5 +252,44 @@ describe('The Express Server', () => {
                     .expect(500);
             })
         })
+
+        describe('DELETE, /api/todos/:todoId', () => {
+
+            let todo;
+    
+            beforeEach(async() => {
+                todo = await Todo.create({
+                    taskName: 'Brazilian Jiu-Jitsu',
+                    assignee: 'Brian'
+                })
+            })
+    
+            it('deletes a Todo', async() => {
+    
+                const res = await agent
+                    .delete('/api/todos/' + todo.id)
+                    .expect(204)
+    
+                expect(res.body.id).to.be.an('undefined');
+            })
+    
+            it('saves changes in database', async() => {
+    
+                const res = await agent
+                    .delete('/api/todos/' + todo.id)
+                    .expect(204)
+    
+                const foundTodo = await Todo.findByPk(todo.id);
+    
+                expect(foundTodo).to.not.exist;
+            })
+    
+            it('responds with a 500 if a Todo does not exist', () => {
+                
+                return agent
+                    .delete('/api/todos/123')
+                    .expect(500)
+            })
+        })
     })
 })
