@@ -12,7 +12,8 @@
             padding: @padding;
             font-size: @fontSize;
             position: relative;
-            top: 20px;
+            top: 21px;
+            margin-bottom: 7px;
         }
 
         .authWelcome {
@@ -20,18 +21,16 @@
             padding: @padding;
             font-size: 30px;
             position: relative;
-            top: 23px;
+            top: 18px;
         }
 
         .authLogin {
             display: inline-block;
-            padding: @padding;
+            padding: 11px 22px;
             background-color: #007bff;
             color: white;
-            border: none;
             font-size: @fontSize;
             transition: all 1s ease;
-            outline-style: solid;
             position: relative;
             top: 20px;
         }
@@ -40,13 +39,15 @@
         .errorMessage {
             background-color: red;
             color: white;
-            padding: 1em;
+            padding: 14px 28px;
             text-align: right;
-            margin-top: 20px;
+            margin: 20px 7px 0px 0px;
+            font-size: 19px;
         }
 
         .authLogout {
             .authLogin;
+            top: 15px;
             background-color: #DC3545;
         }
         .authLogout:hover { background-color: rgb(124, 29, 38); }

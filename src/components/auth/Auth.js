@@ -59,7 +59,9 @@ class Auth extends Component {
                     {
                         error ? (
                             <Fragment>
-                                <div className={ style.errorMessage }>{ error }</div> 
+                                <div className={ style.errorMessage }>
+                                    <strong>{ error }</strong>
+                                </div> 
                             </Fragment>
                         ): null
                     }
