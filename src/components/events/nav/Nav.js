@@ -26,7 +26,7 @@ class Nav extends Component {
                     </span>
                 </div>
 
-                <div className={ style.link }>
+                <div className={ open ? style.linkOpen : style.linkClosed }>
                     <span onClick={ handleClick }>Genres ({ genres.length })</span>
                     
                     <div className={ open ? style.menuOpen : style.menuClosed }>

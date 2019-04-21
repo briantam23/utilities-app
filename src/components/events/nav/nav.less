@@ -1,12 +1,11 @@
 .nav {
     display: flex;
-    padding: 0 10px;
+    padding: 0 20px;
     color: steelblue;
-    margin: 30px 0px 20px 0px;
   }
   
   .navTitle {
-    padding: 10px;
+    margin: 40px 0px 40px 0px;
     text-align: right;
     position: relative;
     cursor: pointer;
@@ -24,12 +23,12 @@
     }
   }
 
-  .link {
+  .linkClosed {
+
     .navTitle;
-    
-    text-align: left;
-    font-size: 35px;
-    margin: 22px 0px 0px 40px;
+    text-align: center;
+    font-size: 30px;
+    margin: 60px 15px 0px 0px;
     width: 27%;
     color: #FE5F55;
 
@@ -53,9 +52,15 @@
       margin-top: 3px;
       padding: 0;
       list-style: none;
-      font-size: 23px;
+      font-size: 20px;
       font-weight: normal;
 
       a, a:visited, a:hover, a:active { text-decoration: underline; }
     }
+  }
+
+  .linkOpen {
+    
+    .linkClosed;
+    margin-top: 5px;
   }
