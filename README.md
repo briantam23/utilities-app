@@ -27,5 +27,6 @@ The `run start:dev` command will run both the `webpack` process (in watch mode) 
 * created React, Express, and Function tests, which can be run with `npm run test`
 * deployed to [Heroku](https://btam-utilities-app.herokuapp.com)
 * Login Credentials: 
-    * Username - `Brian`
-    * Password - `Briantam23@`
+    * Username: `Brian`  | Password: `Briantam23@`
+    * Username: `Mike`   | Password: `Mike12#`
+    * Username: `Johnny` | Password: `Johnny34&` 
