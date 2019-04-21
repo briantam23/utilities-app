@@ -26,7 +26,11 @@ class Auth extends Component {
     handleLogin = () => {
         const { login, history } = this.props;
         login(this.state, history)
-            .catch(() => this.setState({ error: 'Incorrect Username and/or Password. Please try again.' })) 
+            .catch(() => this.setState({ 
+                username: '', 
+                password: '',
+                error: 'Incorrect Username and/or Password. Please try again.' 
+            })) 
     }
 
     render() {
