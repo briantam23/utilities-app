@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "node"
 before_script:
-  - psql -c "CREATE DATABASE testing_db;" -U postgres
+  - psql -c 'create database utilities-app;' -U postgres 
