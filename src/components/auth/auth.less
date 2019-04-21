@@ -8,6 +8,19 @@
     .authForm {
         margin-left: auto;
 
+        .errorMessage {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 12px 24px;
+            text-align: right;
+            margin-right: 10px;
+            font-size: 19px;
+            position: relative;
+            top: 20px;
+            cursor: pointer;
+        }
+
         input {
             padding: @padding;
             font-size: @fontSize;
@@ -39,19 +52,6 @@
         .authLogin:disabled { 
             background-color: #007bff; 
             cursor: default;
-        }
-
-        .errorMessage {
-            display: inline-block;
-            background-color: red;
-            color: white;
-            padding: 14px 28px;
-            text-align: right;
-            margin-right: 20px;
-            font-size: 19px;
-            position: relative;
-            top: 20px;
-            cursor: pointer;
         }
 
         .authLogout {
