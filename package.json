@@ -59,6 +59,7 @@
     "less-loader": "^4.1.0",
     "mocha": "^5.2.0",
     "sinon": "^7.2.3",
+    "sinon-chai": "^3.3.0",
     "style-loader": "^0.23.1",
     "supertest": "^3.4.2",
     "webpack": "^4.28.4",
