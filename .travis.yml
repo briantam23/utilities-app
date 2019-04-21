@@ -1,5 +1,9 @@
 language: node_js
 node_js:
   - "node"
+postgres:
+  adapter: postgresql
+  database: utilities-app
+  username: postgres
 before_script:
-  - psql -c 'create database utilities-app;' -U postgres 
+  - "psql -c 'create database utilities-app;' -U postgres"
