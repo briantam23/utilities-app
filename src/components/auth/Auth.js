@@ -47,6 +47,7 @@ class Auth extends Component {
         const { auth, history } = this.props;
         return(
             <div className={ style.authContainer }>
+                <img src='../../../public/img/brian_tam_logo.png' alt='brian_tam_logo'/>
                 <form onSubmit={ handleAuth } className={ style.authForm }>
             {
                 !auth.id ? (
