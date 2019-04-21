@@ -52,5 +52,22 @@ describe('The `Todo` Redux store', () => {
             expect(newState[newState.length - 1]).to.be.deep.equal(todo);
             expect(newState).to.not.be.equal(prevState);
         })
+
+        it('handles unrecognized actions & returns the previous state', () => {
+
+            const prevState = testingStore.getState();
+
+            testingStore.dispatch({
+                type: 'NOT_A_THING'
+            })
+
+            const newState = testingStore.getState();
+
+            //these should be the same array in memory AND have equivalent key-value pairs
+            expect(prevState).to.be.an('array');
+            expect(newState).to.be.an('array');
+            expect(newState).to.be.equal(prevState);
+            expect(newState).to.be.deep.equal(prevState);
+        })
     })
 })
