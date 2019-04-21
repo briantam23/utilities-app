@@ -1,4 +1,5 @@
 const conn = require('../conn');
+const _ = require('lodash');
 
 
 const Todo = conn.define('todos', {
@@ -15,7 +16,8 @@ const Todo = conn.define('todos', {
 
 const todoHook = todo => {
     const { assignee } = todo;
-    todo.assignee = assignee.charAt(0).toUpperCase() + assignee.slice(1);
+    //todo.assignee = assignee.charAt(0).toUpperCase() + assignee.slice(1);
+    todo.assignee = _.capitalize(assignee);
 }
 
 Todo.beforeCreate((todo, options) => todoHook(todo));
