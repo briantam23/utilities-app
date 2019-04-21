@@ -3,7 +3,8 @@ node_js:
   - "node"
 postgres:
   adapter: postgresql
-  database: utilities_app
+  database: myapp_test
   username: postgres
 before_script:
-  - "psql -c 'create database utilities_app;' -U postgres"
+  - "psql -c 'create database myapp_test;' -U postgres"
+  - "rake db:migrate"
