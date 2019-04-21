@@ -104,6 +104,43 @@ describe('The Express Server', () => {
                 expect(res.body[0].assignee).to.equal('Brian');
                 expect(res.body[1].assignee).to.equal('Mike');
             })
+
+            describe('GET /api/todos/:id', () => {
+
+                let testTodo; 
+                beforeEach(async () => {
+                    const creatingTodos = [{
+                        taskName: 'Brazilian Jiu-Jitsu',
+                        assignee: 'Brian'
+                    }, {
+                        taskName: 'Muay Thai', 
+                        assignee: 'Mike' 
+                    }]
+                    .map(data => Todo.create(data));
+                    
+                    const createdTodos = await Promise.all(creatingTodos);
+                    testTodo = createdTodos[1];
+                })
+
+                it('returns the JSON of the Todo based on the id', async () => {
+
+                    const res = await agent
+                        .get('/api/todos/' + testTodo.id)
+                        .expect(200);
+        
+                    if(typeof res.body === 'string') {
+                        res.body = JSON.parse(res.body);
+                    }
+                    expect(res.body.assignee).to.equal('Mike');
+                })
+
+                it('returns a 404 error if the ID is not correct', () => {
+
+                    return agent
+                        .get('/api/todos/79740')
+                        .expect(404);
+                })
+            })
         })
     })
 })

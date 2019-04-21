@@ -10,7 +10,10 @@ router.get('/', (req, res, next) => {
 
 router.get('/:todoId', (req, res, next) => {
   Todo.findByPk(req.params.todoId)
-    .then(todo => res.send(todo))
+    .then(todo => {
+      if(!todo) return res.sendStatus(404);
+      res.send(todo)
+    })
     .catch(next)
 })
 
