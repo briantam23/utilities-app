@@ -1,7 +1,7 @@
 {
-  "name": "shift-markets-coding-challenge",
+  "name": "btam-utilties-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "btam-utilties-app",
   "main": "server/index.js",
   "scripts": {
     "start": "node ./server/index.js",
