@@ -54,17 +54,13 @@ class AWS extends Component {
                     />
                 <button className={ style.awsButton }>Send</button>
             { 
-                success ? (
-                    <div onClick={ () => handleClearStatus() } className={ style.awsSuccess }>
-                        { success }
+                success || error ? (
+                    <div 
+                        onClick={ () => handleClearStatus() } 
+                        className={ success ? style.awsSuccess : style.awsError }
+                        >
+                        { success ? success + ' (X)' : error + ' (X)' } 
                     </div> 
-                ) : null 
-            }
-            { 
-                error ? (
-                    <div onClick={ () => handleClearStatus() } className={ style.awsError }>
-                        { error }
-                    </div>
                 ) : null 
             }
             </form>
