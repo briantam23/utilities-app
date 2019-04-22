@@ -13,7 +13,7 @@
     "test:dev": "npm test -- --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "Brian Tam <briantam23@gmail.com>",
   "license": "ISC",
   "babel": {
     "presets": [
