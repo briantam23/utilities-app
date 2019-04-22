@@ -4,7 +4,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import { spy } from 'sinon';
 import { expect } from 'chai';
 import App from '../src/components/stopwatch/Stopwatch';
-import Buttons from '../src/components/stopwatch/buttons/Buttons';
+import Buttons from '../src/components/stopwatch/stopwatchButtons/StopwatchButtons';
 import SplitTimeList from '../src/components/stopwatch/splitTimeList/SplitTimeList';
 
 
