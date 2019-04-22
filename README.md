@@ -4,6 +4,8 @@
 
 ## Setting up
 
+This app requires a Ticketmaster API Key, S3 Bucket, AWS Access Key Id, & AWS Secret Access Key which must be set in `.env` or set as an environment variable on `TICKETMASTER_API_KEY`, `S3_BUCKET`, `AWS_ACCESS_KEY_ID`, & `AWS_SECRET_ACCESS_KEY`.
+
 ### Dependencies
 
 * [React](https://reactjs.org)
