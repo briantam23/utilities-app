@@ -12,7 +12,7 @@ A Single Page App created with React, Redux, LESS, Express, & AWS S3, along with
 
 ## Live Demo
 
-This app is currently deployed to [Heroku](https://btam-utilities-app.herokuapp.com)!
+Currently deployed to [Heroku](https://btam-utilities-app.herokuapp.com)!
 
 ## Setting up
 
@@ -35,8 +35,8 @@ This app requires a Ticketmaster API Key, S3 Bucket, AWS Access Key Id, & AWS Se
 * `npm run start:dev`
 * open up [localhost:3000](http://localhost:3000) in a web browser
 
-The `run start:dev` command will run both the `webpack` process (in watch mode) to build your client-side javascript files, and the Node process for your server with `nodemon`.
+The `run start:dev` command will run both the `webpack` process (in watch mode) to build your client-side Javascript files, and the Node process for your server with `nodemon`.
 
 ### Miscellaneous
 
-* created tests for React Components, the Redux Store, Routes, Models, and Functions, which can be run with `npm run test`
+* created Tests for React Components, the Redux Store, Routes, Models, and Functions, which can be run with `npm run test`
