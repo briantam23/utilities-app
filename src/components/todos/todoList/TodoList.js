@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import style from './todoList.less';
 
@@ -7,21 +7,21 @@ class TodoList extends Component {
     render() {
         const { todos } = this.props;
         return(
-            <Fragment>
-                <h2>TodoList</h2>
+            <div className={ style.todoListContainer }>
             {
                 todos.map((todo, idx) =>
                     <div key={ idx }className={ style.todoRow }>
                         <div className={ style.todoColumn }>
-                            { todo.taskName }
+                            <h3>{ todo.taskName }</h3>
+                            <h4>{ 'Assigned to: ' + todo.assignee }</h4>
                         </div>
-                        {/* <div className={ style.todoColumn }>
-                            { todo.assignee }
-                        </div> */}
+                        <div className={ style.todoColumn }>
+                            <button className={ style.todoDeleteButton }>Delete</button>
+                        </div>
                     </div>
                 )
             }
-            </Fragment>
+            </div>
         )
     }
 }

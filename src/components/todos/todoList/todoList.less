@@ -1,11 +1,37 @@
-.todoRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+@import '../../profile/aws/aws';
+
+
+.todoListContainer {
+  margin-top: 20px;
+
+  .todoRow {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 2px solid;
+
+    .todoColumn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 300px;
+
+        h3 { font-size: 25px; }
+        h4 { 
+          font-size: 20px;
+          font-weight: normal; 
+          color: @orangeAccent;
+          margin-top: 5px;
+        }
+
+        .todoDeleteButton {
+          margin-left: auto;
+          height: auto;
+          position: static;
+          padding: 6px 12px;
+          font-size: 17px;
+          background-color: #DC3545;
+        }
+    }
   }
-  
-.todoColumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
