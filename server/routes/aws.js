@@ -21,6 +21,7 @@ const s3 = new AWS.S3();
 
 // abstracts function to upload a file returning a promise
 const uploadFile = (buffer, name, type) => {
+
   const params = {
     ACL: 'public-read',
     Body: buffer,
@@ -28,14 +29,16 @@ const uploadFile = (buffer, name, type) => {
     ContentType: type.mime,
     Key: `${name}.${type.ext}`
   };
+  
   return s3.upload(params).promise();
 };
 
 // Define POST route
 router.post('/upload', (req, res) => {
   const form = new multiparty.Form();
+
   form.parse(req, async (err, fields, files) => {
-    if (err) throw new Error(err);
+    if(err) throw new Error(err);
     try {
       const path = files.file[0].path;
       const buffer = fs.readFileSync(path);
@@ -43,6 +46,7 @@ router.post('/upload', (req, res) => {
       const timestamp = Date.now().toString();
       const fileName = `bucketFolder/${timestamp}-lg`;
       const data = await uploadFile(buffer, fileName, type);
+
       return res.status(200).send(data);
     }
     catch (err) {

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import style from './aws.less';
 import { handleClearError } from '../../../utilities';
@@ -44,32 +44,30 @@ class AWS extends Component {
         const { submitFile, handleFileUpload, handleClearStatus } = this;
         const { success, error } = this.state;
         return (
-            <Fragment>
-                <form onSubmit={ submitFile } className={ style.awsForm }>
-                    <label htmlFor='picture' className={ style.awsLabel }>Upload Profile Picture</label>
-                    <input 
-                        onChange={ handleFileUpload } 
-                        type='file' 
-                        className={ style.awsUpload } 
-                        name='picture'
-                        />
-                    <button className={ style.awsButton }>Send</button>
-                { 
-                    success ? (
-                        <div onClick={ () => handleClearStatus() } className={ style.awsSuccess }>
-                            { success }
-                        </div> 
-                    ) : null 
-                }
-                { 
-                    error ? (
-                        <div onClick={ () => handleClearStatus() } className={ style.awsError }>
-                            { error }
-                        </div>
-                    ) : null 
-                }
-                </form>
-            </Fragment>
+            <form onSubmit={ submitFile } className={ style.awsForm }>
+                <label htmlFor='picture' className={ style.awsLabel }>Upload Profile Picture</label>
+                <input 
+                    onChange={ handleFileUpload } 
+                    type='file' 
+                    className={ style.awsUpload } 
+                    name='picture'
+                    />
+                <button className={ style.awsButton }>Send</button>
+            { 
+                success ? (
+                    <div onClick={ () => handleClearStatus() } className={ style.awsSuccess }>
+                        { success }
+                    </div> 
+                ) : null 
+            }
+            { 
+                error ? (
+                    <div onClick={ () => handleClearStatus() } className={ style.awsError }>
+                        { error }
+                    </div>
+                ) : null 
+            }
+            </form>
         )
     }
 }
