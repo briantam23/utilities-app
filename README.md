@@ -9,6 +9,7 @@
 * [React](https://reactjs.org)
 * [Redux](https://redux.js.org)
 * [LESS](http://lesscss.org)
+* [AWS S3](https://aws.amazon.com/s3)
 * [Enzyme](https://airbnb.io/enzyme)
 * [PostgreSQL](https://www.postgresql.org)
 * [Mocha](https://mochajs.org)

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import style from './aws.less';
+import { handleClearError } from '../../../utilities';
 
 
 class AWS extends Component {
@@ -35,8 +36,12 @@ class AWS extends Component {
         this.setState({ file: e.target.files, success: '', error: '' });
     }
 
+    handleClearStatus = () => {
+        this.setState({ success: '', error: '' });
+    }
+
     render() {
-        const { submitFile, handleFileUpload } = this;
+        const { submitFile, handleFileUpload, handleClearStatus } = this;
         const { success, error } = this.state;
         return (
             <Fragment>
@@ -49,8 +54,20 @@ class AWS extends Component {
                         name='picture'
                         />
                     <button className={ style.awsButton }>Send</button>
-                    { success ? <div className={ style.awsSuccess }>{ success }</div> : null }
-                    { error ? <div className={ style.awsError }>{ error }</div>: null }
+                { 
+                    success ? (
+                        <div onClick={ () => handleClearStatus() } className={ style.awsSuccess }>
+                            { success }
+                        </div> 
+                    ) : null 
+                }
+                { 
+                    error ? (
+                        <div onClick={ () => handleClearStatus() } className={ style.awsError }>
+                            { error }
+                        </div>
+                    ) : null 
+                }
                 </form>
             </Fragment>
         )
