@@ -1,36 +1,41 @@
+@import '../../auth/auth';
+
 @margin: 50px 0px 0px 100px;
-@font-size: 20px;
+@fontSize: 20px;
+@orangeAccent: #FE5F55;
 
 
 .awsForm {
     display: flex;
     flex-direction: column;
+    width: 50%;
 
     .awsLabel { 
         margin: @margin; 
         font-size: 30px; 
-        color: #FE5F55;
+        color: @orangeAccent;
     }
 
     .awsUpload {
         margin: @margin;
-        font-size: @font-size;
+        font-size: @fontSize;
     }
 
-    .awsButton { //import authLogin? 
+    .awsButton {
         margin-left: 100px;
         padding: 11px 22px;
-        font-size: @font-size; 
+        font-size: @fontSize; 
         width: 110px;
         background-color: #0069d9; 
     }
-    /* .awsButton:hover { background-color: #23933d; } */
+    .awsButton:hover { background-color: #0039d1; }
+    .awsButton:disabled { background-color: #0069d9; }
 
     .awsSuccess {
         margin: 89px 0px 0px 100px;
         padding: 11px 22px;
-        font-size: @font-size; 
-        background-color: #28a745; 
+        font-size: @fontSize; 
+        background-color: @submitButtonColor; 
         color: white;
         width: 275px;
         cursor: pointer;
@@ -39,7 +44,7 @@
     .awsError {
         .awsSuccess;
         
-        background-color: #FE5F55;
+        background-color: @orangeAccent;
         width: 210px;
     }
 }

@@ -1,5 +1,6 @@
 @padding: 9px 18px;
 @fontSize: 20px;
+@submitButtonColor: #28a745;
 
 .authContainer {
     display: flex;
@@ -48,7 +49,7 @@
 
         .authLogin {
             padding: 11px 22px;
-            background-color:  #28a745;
+            background-color:  @submitButtonColor;
             color: white;
             font-size: @fontSize;
             transition: all 1s ease;
@@ -60,7 +61,7 @@
         }
         .authLogin:hover { background-color: #23933d; }
         .authLogin:disabled { 
-            background-color: #28a745; 
+            background-color: @submitButtonColor; 
             cursor: default;
         }
 

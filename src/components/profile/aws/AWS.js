@@ -42,17 +42,17 @@ class AWS extends Component {
 
     render() {
         const { submitFile, handleFileUpload, handleClearStatus } = this;
-        const { success, error } = this.state;
+        const { file, success, error } = this.state;
         return (
             <form onSubmit={ submitFile } className={ style.awsForm }>
-                <label htmlFor='file' className={ style.awsLabel }>Upload File</label>
+                <label htmlFor='file' className={ style.awsLabel }>Upload File to AWS</label>
                 <input 
                     onChange={ handleFileUpload } 
                     type='file' 
                     className={ style.awsUpload } 
                     name='file'
                     />
-                <button className={ style.awsButton }>Upload</button>
+                <button disabled={ !file } className={ style.awsButton }>Upload</button>
             { 
                 success || error ? (
                     <div 
