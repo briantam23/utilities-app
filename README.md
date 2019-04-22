@@ -2,6 +2,8 @@
 
 # ⏱ Utilities App
 
+A Single Page App created with React, Redux, LESS, Express, & AWS S3, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.
+
 ## Live Demo
 
 This app is deployed to [Heroku](https://btam-utilities-app.herokuapp.com)!
