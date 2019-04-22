@@ -1,7 +1,24 @@
 {
   "name": "btam-utilties-app",
+  "author": { 
+    "name": "Brian Tam",
+    "email": "briantam23@gmail.com",
+    "url": "https://briantam23.github.io"
+  },
+  "contributors": [
+    {
+      "name": "Brian Tam",
+      "email": "briantam23@gmail.com",
+      "url": "https://briantam23.github.io"
+    }
+  ],
+  "homepage": "https://btam-utilities-app.herokuapp.com",
   "version": "1.0.0",
-  "description": "btam-utilties-app",
+  "description": "A Single Page App created with React, Redux, LESS, Express, & AWS S3, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/briantam23/utilities-app.git"
+  },
   "main": "server/index.js",
   "scripts": {
     "start": "node ./server/index.js",
@@ -12,8 +29,7 @@
     "test": "mocha ./test/*.test.js --require babel-polyfill --require ignore-styles --compilers js:babel-register",
     "test:dev": "npm test -- --watch"
   },
-  "keywords": [],
-  "author": "Brian Tam <briantam23@gmail.com>",
+  "keywords": ["react", "redux", "less", "nodejs", "nodejs", "aws-s3", "travis-ci", "enzyme", "jwt-authentication", "postgres"],
   "license": "ISC",
   "babel": {
     "presets": [
