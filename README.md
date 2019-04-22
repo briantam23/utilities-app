@@ -4,6 +4,12 @@
 
 A Single Page App created with React, Redux, LESS, Express, & AWS S3, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.
 
+## Login Credentials
+
+* Username: `Brian`  | Password: `Briantam23@`
+* Username: `Mike`   | Password: `Mike12#`
+* Username: `Johnny` | Password: `Johnny34&` 
+
 ## Live Demo
 
 This app is currently deployed to [Heroku](https://btam-utilities-app.herokuapp.com)!
@@ -34,7 +40,3 @@ The `run start:dev` command will run both the `webpack` process (in watch mode) 
 ### Miscellaneous
 
 * created React, Express, and Function tests, which can be run with `npm run test`
-* Login Credentials: 
-    * Username: `Brian`  | Password: `Briantam23@`
-    * Username: `Mike`   | Password: `Mike12#`
-    * Username: `Johnny` | Password: `Johnny34&` 

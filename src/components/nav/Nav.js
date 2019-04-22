@@ -10,6 +10,7 @@ const Nav = () => (
         <li><Link to='/ticketmaster-events'>Events</Link></li>
         <li><Link to='/todos'>Todos</Link></li>
         <li><a href='#'>Air Quality</a></li>
+        <li><a href='#'>Weather Forecast</a></li>
         <li><Link to='/my-profile'>My Profile</Link></li>
         {/* <li><a href='#'>Timer</a></li>
         <li><a href='#'>Calculator</a></li>
