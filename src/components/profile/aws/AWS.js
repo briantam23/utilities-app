@@ -45,14 +45,14 @@ class AWS extends Component {
         const { success, error } = this.state;
         return (
             <form onSubmit={ submitFile } className={ style.awsForm }>
-                <label htmlFor='picture' className={ style.awsLabel }>Upload Profile Picture</label>
+                <label htmlFor='file' className={ style.awsLabel }>Upload File</label>
                 <input 
                     onChange={ handleFileUpload } 
                     type='file' 
                     className={ style.awsUpload } 
-                    name='picture'
+                    name='file'
                     />
-                <button className={ style.awsButton }>Send</button>
+                <button className={ style.awsButton }>Upload</button>
             { 
                 success || error ? (
                     <div 
