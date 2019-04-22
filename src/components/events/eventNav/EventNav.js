@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import style from './nav.less';
+import style from './eventNav.less';
 
 
-class Nav extends Component {
+class EventNav extends Component {
 
     state = {
         open: false
@@ -47,4 +47,4 @@ class Nav extends Component {
 }
 
 
-export default Nav;
+export default EventNav;

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import style from './stopwatch.less';
-import Buttons from './buttons/Buttons';
+import StopwatchButtons from './stopwatchButtons/StopwatchButtons';
 import SplitTimeList from './splitTimeList/SplitTimeList';
 import formatTime from '../../utilities';
 
@@ -81,7 +81,7 @@ class Stopwatch extends Component {
                     { formatTime(time) }
                 </div>
 
-                <Buttons 
+                <StopwatchButtons
                     isRunning={ isRunning } 
                     start={ start } 
                     split={ split } 

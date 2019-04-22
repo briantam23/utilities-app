@@ -1,8 +1,8 @@
 import React from 'react';
-import style from './buttons.less';
+import style from './stopwatchButtons.less';
 
 
-const Buttons = ({ isRunning, start, split, stop, reset }) => (
+const StopwatchButtons = ({ isRunning, start, split, stop, reset }) => (
     <div className={ style.buttons }>
         <button onClick={ () => start() } disabled={ isRunning }>Start</button>
         <button onClick={ () => split() } disabled={ !isRunning }>Split</button>
@@ -12,4 +12,4 @@ const Buttons = ({ isRunning, start, split, stop, reset }) => (
 )
 
 
-export default Buttons;
+export default StopwatchButtons;
