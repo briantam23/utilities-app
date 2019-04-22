@@ -2,6 +2,10 @@
 
 # ⏱ Utilities App
 
+## Live Demo
+
+This app is deployed to [Heroku](https://btam-utilities-app.herokuapp.com)!
+
 ## Setting up
 
 This app requires a Ticketmaster API Key, S3 Bucket, AWS Access Key Id, & AWS Secret Access Key which must be set in `.env` or set as an environment variable on `TICKETMASTER_API_KEY`, `S3_BUCKET`, `AWS_ACCESS_KEY_ID`, & `AWS_SECRET_ACCESS_KEY`.
@@ -28,7 +32,6 @@ The `run start:dev` command will run both the `webpack` process (in watch mode) 
 ### Miscellaneous
 
 * created React, Express, and Function tests, which can be run with `npm run test`
-* deployed to [Heroku](https://btam-utilities-app.herokuapp.com)
 * Login Credentials: 
     * Username: `Brian`  | Password: `Briantam23@`
     * Username: `Mike`   | Password: `Mike12#`
