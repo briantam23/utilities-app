@@ -6,7 +6,7 @@ A Single Page App created with React, Redux, LESS, Express, & AWS S3, along with
 
 ## Live Demo
 
-This app is deployed to [Heroku](https://btam-utilities-app.herokuapp.com)!
+This app is currently deployed to [Heroku](https://btam-utilities-app.herokuapp.com)!
 
 ## Setting up
 
