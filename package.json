@@ -1,6 +1,6 @@
 {
   "name": "btam-utilties-app",
-  "author": { 
+  "author": {
     "name": "Brian Tam",
     "email": "briantam23@gmail.com",
     "url": "https://briantam23.github.io"
@@ -29,7 +29,18 @@
     "test": "mocha ./test/*.test.js --require babel-polyfill --require ignore-styles --compilers js:babel-register",
     "test:dev": "npm test -- --watch"
   },
-  "keywords": ["react", "redux", "less", "nodejs", "nodejs", "aws-s3", "travis-ci", "enzyme", "jwt-authentication", "postgres"],
+  "keywords": [
+    "react",
+    "redux",
+    "less",
+    "nodejs",
+    "nodejs",
+    "aws-s3",
+    "travis-ci",
+    "enzyme",
+    "jwt-authentication",
+    "postgres"
+  ],
   "license": "ISC",
   "babel": {
     "presets": [
