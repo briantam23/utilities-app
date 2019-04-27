@@ -5,7 +5,7 @@ import style from './forecastChart.less';
 class ForecastChart extends Component {
     render() {
         return( 
-            <hr/>
+            <svg className={ style.chart }></svg>
         )
     }
 }
