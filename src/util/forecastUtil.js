@@ -1,7 +1,7 @@
 const getMainForecast = forecast => {
     const mainForecast = [];
     forecast.map((el, idx) => {
-        el["main"]["idx"] = idx + 1;
+        el["main"]["idx"] = idx;
         mainForecast.push(el.main);
     })
     return mainForecast;

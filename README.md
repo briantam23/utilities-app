@@ -2,7 +2,7 @@
 
 # ⏱ Utilities App
 
-A Single Page App created with React, Redux, LESS, Express, & AWS S3, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.
+A Single Page App created with React, Redux, LESS, AWS S3, & D3, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.
 
 ## Login Credentials
 
@@ -26,6 +26,7 @@ This app requires a Ticketmaster API Key, S3 Bucket, AWS Access Key Id, & AWS Se
 * [AWS S3](https://aws.amazon.com/s3)
 * [Enzyme](https://airbnb.io/enzyme)
 * [PostgreSQL](https://www.postgresql.org)
+* [D3](https://d3js.org)
 * [Mocha](https://mochajs.org)
 * [Express](https://expressjs.com)
 
