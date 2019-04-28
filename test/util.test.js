@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
-import formatTime, { padding } from '../src/util';
+import formatTime, { padding } from '../src/util/stopwatchUtil';
 
 
 describe('The Utility Functions', () => {

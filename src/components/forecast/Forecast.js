@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import style from './forecast.less';
 import ForecastChart from './forecastChart/ForecastChart';
+import getMainForecast from '../../util/forecastUtil';
 
 
 class Forecast extends Component {
@@ -18,11 +19,8 @@ class Forecast extends Component {
 
     render() {
         const { forecast } = this.state;
-        const mainForecast = [];
-        forecast.map((el, idx) => {
-            el["main"]["idx"] = idx + 1;
-            mainForecast.push(el.main);
-        })
+        const mainForecast = getMainForecast(forecast);
+        
         return (
             <Fragment>
                 <h1 className={ style.forecastHeader }>Weather Forecast created with D3.js!</h1>
