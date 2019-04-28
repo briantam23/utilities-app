@@ -5,29 +5,43 @@ import { LineChart, CartesianGrid, Line, Legend, XAxis, YAxis, Tooltip, Responsi
 
 const ForecastChart = ({ mainForecast }) => {
     console.log(mainForecast);
-    return( 
+    return (
         <Fragment>
-            <ResponsiveContainer width="100%" height={ 400 } >
-    
-                <LineChart 
-                    data={ mainForecast } 
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-                    >
+        {
+            mainForecast.length ? (
+                <Fragment>
+                    <ResponsiveContainer width="100%" height={400} >
 
-                    <XAxis 
-                    dataKey="idx" 
-                    tick={{ fontSize: '11px', padding: '12px' }}
-                    />
-                    <YAxis 
-                    type="number" 
-                    domain={['dataMin+10000', 'auto']} 
-                    tick={{ fontSize: '11px', padding: '12px' }}
-                    />
- 
-                </LineChart>
+                        <LineChart
+                            data={mainForecast}
+                            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                        >
 
-            </ResponsiveContainer>
-      </Fragment>
+                            <XAxis
+                                dataKey="idx"
+                                tick={{ fontSize: '11px', padding: '12px' }}
+                            />
+                            <YAxis
+                                type="number"
+                                domain={['dataMin+10000', 'auto']}
+                                tick={{ fontSize: '11px', padding: '12px' }}
+                            />
+
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <Tooltip />
+                            <Legend />
+
+                            <Line type="monotone" dataKey="temp_max" stroke="#ff0000" />
+                            <Line type="monotone" dataKey="temp_min" stroke="#0000ff" />
+                            <Line type="monotone" dataKey="humidity" stroke="#00ff00" />
+
+                        </LineChart>
+
+                    </ResponsiveContainer>
+                </Fragment>
+            ) : null
+        }
+        </Fragment>
     )
 }
 
