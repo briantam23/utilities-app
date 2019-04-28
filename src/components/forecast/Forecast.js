@@ -17,11 +17,16 @@ class Forecast extends Component {
     }
 
     render() {
-        console.log(this.state)
+        const { forecast } = this.state;
+        const mainForecast = [];
+        forecast.map((el, idx) => {
+            el["main"]["idx"] = idx + 1;
+            mainForecast.push(el.main);
+        })
         return (
             <Fragment>
-                <h1 className={ style.forecastHeader }>Weather Forecast created with D3!</h1>
-                <ForecastChart/>
+                <h1 className={ style.forecastHeader }>Weather Forecast created with D3.js!</h1>
+                <ForecastChart mainForecast={ mainForecast }/>
             </Fragment> 
         )
     }
