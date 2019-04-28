@@ -16,7 +16,7 @@ Currently deployed to [Heroku](https://btam-utilities-app.herokuapp.com)!
 
 ## Setting up
 
-This app requires a Ticketmaster API Key, S3 Bucket, AWS Access Key Id, & AWS Secret Access Key which must be set in `.env` or set as an environment variable on `TICKETMASTER_API_KEY`, `S3_BUCKET`, `AWS_ACCESS_KEY_ID`, & `AWS_SECRET_ACCESS_KEY`.
+This app requires a Ticketmaster API Key, S3 Bucket, AWS Access Key Id, AWS Secret Access Key, & Open Weather Map API Key, which must be set in `.env` or set as an environment variable on `TICKETMASTER_API_KEY`, `S3_BUCKET`, `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, & `OPEN_WEATHER_MAP_API_KEY`.
 
 ### Dependencies
 
