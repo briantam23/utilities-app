@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import style from './stopwatch.less';
 import StopwatchButtons from './stopwatchButtons/StopwatchButtons';
 import SplitTimeList from './splitTimeList/SplitTimeList';
-import formatTime from '../../utilities';
+import formatTime from '../../util';
 
 
 class Stopwatch extends Component {
