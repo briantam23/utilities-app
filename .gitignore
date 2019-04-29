@@ -11,8 +11,8 @@ npm-debug.log*
 node_modules
 
 # Compiled JS
-public/scripts/bundle.js
-public/scripts/bundle.js.map
+public/js/bundle.js
+public/js/bundle.js.map
 
 # OSX folder metadata
 .DS_Store

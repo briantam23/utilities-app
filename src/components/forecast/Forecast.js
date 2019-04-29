@@ -23,7 +23,7 @@ class Forecast extends Component {
         
         return (
             <Fragment>
-                <h1 className={ style.forecastHeader }>Weather Forecast created with D3.js!</h1>
+                <h1 className={ style.forecastHeader }>Hourly Weather Forecast created with D3.js!</h1>
                 <ForecastChart mainForecast={ mainForecast }/>
             </Fragment> 
         )

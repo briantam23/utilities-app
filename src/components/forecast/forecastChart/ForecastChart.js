@@ -31,9 +31,10 @@ const ForecastChart = ({ mainForecast }) => {
                             <Tooltip />
                             <Legend />
 
-                            <Line type="monotone" dataKey="temp_max" stroke="#ff0000" />
-                            <Line type="monotone" dataKey="temp_min" stroke="#0000ff" />
-                            <Line type="monotone" dataKey="humidity" stroke="#00ff00" />
+                            <Line type="monotone" dataKey="temp" stroke="#00008b" />
+                            {/* <Line type="monotone" dataKey="temp_max" stroke="#ff0000" />
+                            <Line type="monotone" dataKey="temp_min" stroke="#0000ff" /> */}
+                            <Line type="monotone" dataKey="humidity" stroke="#1C1C1C" />
 
                         </LineChart>
 
