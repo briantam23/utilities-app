@@ -3,7 +3,7 @@ import style from './stopwatchButtons.less';
 
 
 const StopwatchButtons = ({ isRunning, start, split, stop, reset }) => (
-    <div className={ style.buttons }>
+    <div className={ style.buttonContainer }>
         <button onClick={ () => start() } disabled={ isRunning }>Start</button>
         <button onClick={ () => split() } disabled={ !isRunning }>Split</button>
         <button onClick={ () => stop() } disabled={ !isRunning }>Stop</button>
