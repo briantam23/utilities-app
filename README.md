@@ -2,7 +2,7 @@
 
 # ⏱ Utilities App
 
-A Single Page App created with React, Redux, LESS, AWS S3, & D3, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.
+A Single Page App created with React, Redux, LESS, AWS S3, D3 and Media Queries, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.
 
 ## Login Credentials
 
