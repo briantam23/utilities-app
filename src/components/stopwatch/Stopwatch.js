@@ -71,32 +71,30 @@ class Stopwatch extends Component {
         const { isRunning, time, splitTimes, index } = this.state;
         const { start, split, stop, reset } = this;
         return(
-            <div className={ style.container }>
+            <div className={ style.primaryContainer }>
+                <div className={ style.secondaryContainer }>
+                    <h1 className={ style.header }>Stopwatch</h1>
 
-                <h1 className={ style.header }>
-                    Stopwatch
-                </h1>
+                    <div className={ style.mainTime }>{ formatTime(time) }</div>
 
-                <div className={ style.mainTime }>
-                    { formatTime(time) }
-                </div>
-
-                <StopwatchButtons
-                    isRunning={ isRunning } 
-                    start={ start } 
-                    split={ split } 
-                    stop={ stop } 
-                    reset={ reset }
-                />
-
-                <ul>
-                    <SplitTimeList 
+                    <StopwatchButtons
                         isRunning={ isRunning } 
-                        splitTimes={ splitTimes } 
-                        index={ index } 
-                        reset={ reset } 
+                        start={ start } 
+                        split={ split } 
+                        stop={ stop } 
+                        reset={ reset }
                     />
-                </ul>
+                </div>
+                <div>
+                    <ul>
+                        <SplitTimeList 
+                            isRunning={ isRunning } 
+                            splitTimes={ splitTimes } 
+                            index={ index } 
+                            reset={ reset } 
+                        />
+                    </ul>
+                </div>
             </div>
         )
     }
