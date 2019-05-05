@@ -1,3 +1,14 @@
+/*====================================
+=            BREAK POINTS            =
+====================================*/
+@wide-screen-down: ~'(max-width: 1199px)';
+@desktop-down: ~'(max-width: 991px)';
+@tablet-down: ~'(max-width: 767px)';
+@phone-down: ~'(max-width: 480px)';
+@small-phone-down: ~'(max-width: 320px)';
+
+//====================================
+
 @padding: 9px 18px;
 @fontSize: 20px;
 @submitButtonColor: #28a745;
@@ -37,6 +48,11 @@
             position: relative;
             top: 21px;
             margin: 0px 5px 7px 5px;
+
+            @media @desktop-down {
+                padding: 4px 8px;
+                top: 26px;
+            }
         }
 
         .authWelcome {
@@ -59,6 +75,11 @@
             margin: 0px 15px 0px 10px;
             cursor: pointer;
             outline-style: none;
+
+            @media @desktop-down {
+                padding: 5px 10px;
+                top: 26px;
+            }
         }
         .authLogin:hover { background-color: #23933d; }
         .authLogin:disabled { 
