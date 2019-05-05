@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios'; 
-import Nav from './eventNav/EventNav';
+import EventNav from './eventNav/EventNav';
 import EventList from './eventList/EventList';
+import { compileGenres } from '../../util/eventsUtil';
 
 
 class Events extends Component {
@@ -18,14 +19,10 @@ class Events extends Component {
     }
     render() {
         const { events } = this.state;
-        let genres = [];
-        events.map(event => {
-            let genre = event.classifications[0].genre.name;
-            if(genres.indexOf(genre) === -1) genres.push(genre)  //compiling all the different genres
-        })
+        const genres = compileGenres(events);
         return(
             <Fragment>
-                <Nav genres={ genres }/>
+                <EventNav genres={ genres }/>
                 <Route exact path='/ticketmaster-events' render={ () => <EventList events={ events }/> }/>
                 <Route path='/ticketmaster-events/genre/:genreName?' render={({ match }) => <EventList events={ events } genre={ match.params.genreName }/>}/>
             </Fragment>
