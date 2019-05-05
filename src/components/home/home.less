@@ -1,3 +1,14 @@
+/*====================================
+=            BREAK POINTS            =
+====================================*/
+@wide-screen-down: ~'(max-width: 1199px)';
+@desktop-down: ~'(max-width: 991px)';
+@tablet-down: ~'(max-width: 767px)';
+@phone-down: ~'(max-width: 480px)';
+@small-phone-down: ~'(max-width: 320px)';
+
+//====================================
+
 @mainColor: steelblue;
 @headerFontSize: 60px;
 
@@ -7,6 +18,11 @@
     margin: auto 10px;
     text-align: center;
     display: flex;
+
+    @media @wide-screen-down {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .headerContainer {
         width: 71%;
@@ -41,5 +57,9 @@
         width: auto\9; /* ie8 */
         border: 4px solid black;
         border-radius: 5px;
+
+        @media @wide-screen-down {
+            margin: 10% auto 0%;
+        }
     }
 }
