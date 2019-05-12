@@ -6,7 +6,7 @@ import { LineChart, CartesianGrid, Line, Legend, XAxis, YAxis, Tooltip, Responsi
 const ForecastChart = ({ mainForecast }) => {
     console.log(mainForecast);
     return (
-        <Fragment>
+        <div className={ style.chart }>
         {
             mainForecast.length ? (
                 <Fragment>
@@ -42,7 +42,7 @@ const ForecastChart = ({ mainForecast }) => {
                 </Fragment>
             ) : null
         }
-        </Fragment>
+        </div>
     )
 }
 
