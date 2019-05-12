@@ -22,6 +22,7 @@ const App = () => {
                 <Route path='/ticketmaster-events' render={ () => <Events/> }/>
                 <Route path='/todos' render={ () => <Todos/> }/>
                 <Route path='/forecast' render={ () => <Forecast/> }/>
+                {/* <Route path='/sports' render={ () => <Sports/> }/> */}
                 <Route path='/my-profile' render={ () => <Profile/> }/>
             </div>
         </Router>

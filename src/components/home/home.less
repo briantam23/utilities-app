@@ -28,11 +28,22 @@
         width: 71%;
         margin-top: 3%;
 
-        h1 { font-size: @headerFontSize; }
+        h1 { 
+            font-size: @headerFontSize; 
+
+            @media @phone-down {
+                font-size: 45px;
+            }
+        }
 
         h2 { 
             font-size: 22px;
             color: #FE5F55; 
+
+            @media @phone-down {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
         }
 
         .technologies {
