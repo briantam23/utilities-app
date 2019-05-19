@@ -1,3 +1,5 @@
+@import '../../home/home';
+
 .nav {
     display: flex;
     padding: 0 20px;
@@ -17,6 +19,17 @@
     width: 73%;
     font-weight: bold;
 
+    @media @desktop-down {
+      font-size: 50px;
+    }
+    @media @tablet-down {
+      font-size: 35px;
+    }
+    @media @phone-down {
+      font-size: 25px;
+      margin-top: 20px;
+    }
+
     a, a:visited, a:hover, a:active { 
       color: inherit;
       text-decoration: none; 
@@ -34,6 +47,19 @@
 
     span { font-weight: bold; }
   
+    @media @desktop-down {
+      font-size: 25px;
+    } 
+    @media @tablet-down {
+      font-size: 25px;
+      bottom: 12px;
+    }
+    @media @phone-down {
+      font-size: 18px;
+      left: 15px;
+      bottom: -6px;
+    }
+
     .menuClosed {
       opacity: 0;
       position: absolute;
@@ -44,9 +70,12 @@
       padding: 10px;
       text-align: center;
       /* transition: all 1000ms ease; */
+      
     }
     
-    .menuOpen { opacity: 1; }
+    .menuOpen { 
+      opacity: 1; 
+    }
 
     .linkItems {
       margin-top: 3px;
@@ -56,6 +85,13 @@
       font-weight: normal;
 
       a, a:visited, a:hover, a:active { text-decoration: underline; }
+
+      @media @desktop-down {
+        font-size: 18px;
+      }
+      @media @phone-down {
+        font-size: 15px;
+      }
     }
   }
 
@@ -63,4 +99,13 @@
     
     .linkClosed;
     margin-top: 5px;
+
+    @media @tablet-down {
+      bottom: 3px;
+    }
+    @media @phone-down {
+      font-size: 18px;
+      left: 15px;
+      bottom: 10px;
+    }
   }
