@@ -9,5 +9,9 @@
     h1 { 
         color: @mainColor;
         font-size: @headerFontSize;
+
+        @media @tablet-down { 
+            font-size: @headerFontSize * 0.8; 
+        }
     }
 }
