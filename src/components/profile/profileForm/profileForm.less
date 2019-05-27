@@ -10,7 +10,10 @@
 
 .profileFormContainer {
     width: @width;
-    min-width: 500px;
+
+    @media @desktop-down { 
+        width: @width * 2;
+    }
     
     h1 { 
         text-align: center; 

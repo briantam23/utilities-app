@@ -1,3 +1,6 @@
+@import '../home/home';
+
+
 .profileHeader { 
     text-align: center;
     font-size: 60px; 
@@ -7,4 +10,8 @@
 
 .profileDetail {
     display: flex;
+
+    @media @desktop-down { 
+        flex-direction: column;
+    }
 }
