@@ -9,16 +9,24 @@
     padding-bottom: 30px;
     background-color: steelblue;
 
+    @media @tablet-down {
+        flex-direction: column;
+    }
+
     img {
         position: relative;
         top: 12px;
         margin-left: 20px;
-        min-width: 150px;
-        max-height: 70px;
+        width: 150px;
+        height: 70px;
     }
     
     .authForm {
         margin-left: auto;
+
+        @media @tablet-down {
+            margin-left: 35px;
+        }
 
         .errorMessage {
             display: inline-block;
@@ -63,7 +71,7 @@
             transition: all 1s ease;
             position: relative;
             top: 21px;
-            margin: 0px 15px 0px 10px;
+            margin: 0px 15px 0px 5px;
             cursor: pointer;
             outline-style: none;
 
