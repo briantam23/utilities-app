@@ -48,17 +48,17 @@ class Auth extends Component {
         return(
             <div className={ style.authContainer }>
                 <img src='../../../public/img/brian_tam_logo.png' alt='brian_tam_logo'/>
+            {
+                error ? (
+                    <div onClick={ () => handleClearError() } className={ style.errorMessage }>
+                        <strong>{ error }</strong>
+                    </div> 
+                ): null
+            }
                 <form onSubmit={ handleAuth } className={ style.authForm }>
             {
                 !auth.id ? (
                     <Fragment>
-                    {
-                        error ? (
-                            <div onClick={ () => handleClearError() } className={ style.errorMessage }>
-                                <strong>{ error }</strong>
-                            </div> 
-                        ): null
-                    }
                         <input 
                             onChange={ handleChange } 
                             value={ username } 

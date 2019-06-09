@@ -21,6 +21,27 @@
         height: 70px;
     }
     
+    .errorMessage {
+        display: inline-block;
+        background-color: rgb(216, 3, 3);
+        color: white;
+        padding: 12px 24px;
+        text-align: right;
+        margin-left: auto;
+        margin-right: 10px;
+        /* height: 22px; */
+        font-size: @fontSize;
+        position: relative;
+        top: 20px;
+        cursor: pointer;
+
+        @media @tablet-down {
+            margin: 0px 39px 3px;
+            text-align: left; 
+            padding: 5px 10px;
+        }
+    }
+
     .authForm {
         margin-left: auto;
 
@@ -28,17 +49,8 @@
             margin-left: 35px;
         }
 
-        .errorMessage {
-            display: inline-block;
-            background-color: rgb(216, 3, 3);
-            color: white;
-            padding: 12px 24px;
-            text-align: right;
-            margin-right: 10px;
-            font-size: 19px;
-            position: relative;
-            top: 20px;
-            cursor: pointer;
+        @media (max-width: 767px) {
+            margin-bottom: 18px;
         }
 
         input {
@@ -61,6 +73,12 @@
             font-weight: bold;
             position: relative;
             top: 18px;
+
+            @media @desktop-down {
+                padding: 5px 10px 5px 5px;
+                top: 28px;
+                font-size: 25px;
+            }
         }
 
         .authLogin {
