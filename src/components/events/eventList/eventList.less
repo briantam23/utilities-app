@@ -1,3 +1,5 @@
+@import '../../home/home.less';
+
 @width: 785px;
 @border: 3px solid black;
 
@@ -30,9 +32,17 @@
         font-size: 20px;
         font-weight: bold;
 
+        @media @phone-down {
+            font-size: 17px;
+        }
+
         a, a:visited, a:hover, a:active { 
             color: #007bff;
             font-size: 30px;
+
+            @media @phone-down {
+                font-size: 20px;
+            }
         }
     }
 }

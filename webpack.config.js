@@ -28,7 +28,18 @@ module.exports = {
             },
             { loader: "less-loader" }
           ]
-        }
+        },
+        {
+          test: /\.(png|jpg|gif)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 8192,
+              },
+            },
+          ],
+        },
       ]
     },
     plugins: [new Dotenv({ systemvars: true })]
