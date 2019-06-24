@@ -34,7 +34,7 @@ This app requires a Ticketmaster API Key, S3 Bucket, AWS Access Key Id, AWS Secr
 
 * `npm install` (or `yarn install`)
 * `npm run start:dev`
-* open up [localhost:3000](http://localhost:3000) in a web browser
+* open up [localhost:8080](http://localhost:8080) in a web browser
 
 The `run start:dev` command will run both the `webpack` process (in watch mode) to build your client-side Javascript files, and the Node process for your server with `nodemon`.
 
