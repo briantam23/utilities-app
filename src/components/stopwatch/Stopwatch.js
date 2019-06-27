@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import style from './stopwatch.less';
-import StopwatchButtons from './stopwatchButtons/StopwatchButtons';
+import StopwatchDisplay from './stopwatchDisplay/StopwatchDisplay';
 import SplitTimeList from './splitTimeList/SplitTimeList';
-import formatTime from '../../util/stopwatchUtil';
 
 
 class Stopwatch extends Component {
@@ -73,11 +72,8 @@ class Stopwatch extends Component {
         return(
             <div className={ style.stopwatchContainer }>
                 <div className={ style.stopwatchDisplayContainer }>
-                    <h1 className={ style.header }>Stopwatch</h1>
-
-                    <div className={ style.mainTime }>{ formatTime(time) }</div>
-
-                    <StopwatchButtons
+                    <StopwatchDisplay
+                        time={ time }
                         isRunning={ isRunning } 
                         start={ start } 
                         split={ split } 
@@ -88,14 +84,12 @@ class Stopwatch extends Component {
             {
                 splitTimes.length ? (
                     <div>
-                        <ul>
-                            <SplitTimeList 
-                                isRunning={ isRunning } 
-                                splitTimes={ splitTimes } 
-                                index={ index } 
-                                reset={ reset } 
-                            />
-                        </ul>
+                        <SplitTimeList 
+                            isRunning={ isRunning } 
+                            splitTimes={ splitTimes } 
+                            index={ index } 
+                            reset={ reset } 
+                        />
                     </div>
                 ) : null
             }

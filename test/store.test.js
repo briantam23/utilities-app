@@ -18,7 +18,7 @@ describe('The `Todo` Redux store', () => {
 
             expect(_createTodo(todo)).to.be.deep.equal({
                 type: CREATE_TODO,
-                todos: todo
+                todo
             })
         })
     })
@@ -43,7 +43,7 @@ describe('The `Todo` Redux store', () => {
 
             testingStore.dispatch({
                 type: CREATE_TODO,
-                todos: todo
+                todo
             })
 
             const newState = testingStore.getState();

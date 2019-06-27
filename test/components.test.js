@@ -20,8 +20,6 @@ describe('The React Components', () => {
         before('Create component', () => appWrapper = shallow(<App/>));
     
         it('renders a <h1>', () => expect(appWrapper.find('h1')).to.have.length(1));
-    
-        it('renders an <ul>', () => expect(appWrapper.find('ul')).to.have.length(1));
     })
 
     describe('<Buttons/> component', () => {
