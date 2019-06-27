@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import style from './todoCreate.less';
+import { createTodo } from '../../../store/actions/todos';
 
 
 class TodoCreate extends Component {
@@ -14,14 +15,32 @@ class TodoCreate extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    handleSubmit = e => {
+        const { createTodo } = this.props;
+
+        e.preventDefault();
+        createTodo(this.state);
+    }
+
     render() {
         const { taskName, assignee } = this.state;
-        const { handleChange } = this;
+        const { handleChange, handleSubmit } = this;
         return(
             <div className={ style.todoCreateContainer }>
-                <form className={ style.todoForm }>
-                    <input onChange={ handleChange } value={ taskName } name='taskName'/>
-                    <input onChange={ handleChange } value={ taskName } name='assignee'/>
+                <h1>Create Todo</h1>
+                <form onSubmit={ handleSubmit } className={ style.todoForm }>
+                    <input 
+                        onChange={ handleChange } 
+                        value={ taskName } 
+                        name='taskName'
+                        placeholder='Task Name'
+                        />
+                    <input 
+                        onChange={ handleChange } 
+                        value={ assignee } 
+                        name='assignee'
+                        placeholder='Assignee'
+                        />
                     <button className={ style.todoSubmit }>Create</button>
                 </form>
             </div>
@@ -30,4 +49,7 @@ class TodoCreate extends Component {
 }
 
 
-export default connect()(TodoCreate);
+const mapDispatchToProps = ({ createTodo });
+
+
+export default connect(null, mapDispatchToProps)(TodoCreate);

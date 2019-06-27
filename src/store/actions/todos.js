@@ -16,20 +16,19 @@ export const loadInitialTodos = () => (
 
 export const _createTodo = todo => ({
     type: CREATE_TODO,
-    todos: todo
+    todo
 })
-export const createTodo = (todo, history) => (
+export const createTodo = todo => (
     dispatch => (
         axios.post('/api/todos', todo)
             .then(res => res.data)
-            .then(_todo => dispatch(_createStudent(_todo)))
-            .then(() => history.push('/todos'))
+            .then(_todo => dispatch(_createTodo(_todo)))
     )
 )
 
 const _updateTodo = todo => ({
     type: UPDATE_TODO,
-    todos: todo
+    todo
 })
 export const updateTodo = (todo, history, redirectToTodos) => (
     dispatch => (
@@ -42,7 +41,7 @@ export const updateTodo = (todo, history, redirectToTodos) => (
 
 const _destroyTodo = todo => ({
     type: DESTROY_TODO,
-    todos: todo
+    todo
 })
 export const destroyTodo = (todo, history) => (
     dispatch => (

@@ -7,11 +7,11 @@ const todosReducer = (state = [], action) => {
         case LOAD_INITIAL_TODOS:
             return action.todos;
         case CREATE_TODO:
-            return [...state, action.todos];
+            return [...state, action.todo];
         case UPDATE_TODO:
-            return state.map(todo => todo.id !== action.todos.id ? todo : action.todos);
+            return state.map(todo => todo.id !== action.todo.id ? todo : action.todo);
         case DESTROY_TODO:
-            return state.filter(todo => todo.id !== action.todos.id);
+            return state.filter(todo => todo.id !== action.todo.id);
         default:
             return state;
     }

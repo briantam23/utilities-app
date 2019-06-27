@@ -2,15 +2,12 @@
 
 
 .todoCreateContainer {
-    width: 50%;
-}
-
-.todoCreateContainer {
     width: @width;
+    align-self: stretch;
+    margin-top: 25px;
+    
 
-    @media @desktop-down { 
-        width: @width * 2;
-    }
+    @media @desktop-down { width: @width * 2; }
     
     h1 { 
         text-align: center; 
