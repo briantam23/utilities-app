@@ -71,8 +71,8 @@ class Stopwatch extends Component {
         const { isRunning, time, splitTimes, index } = this.state;
         const { start, split, stop, reset } = this;
         return(
-            <div className={ style.primaryContainer }>
-                <div className={ style.secondaryContainer }>
+            <div className={ style.stopwatchContainer }>
+                <div className={ style.stopwatchDisplayContainer }>
                     <h1 className={ style.header }>Stopwatch</h1>
 
                     <div className={ style.mainTime }>{ formatTime(time) }</div>
@@ -85,16 +85,20 @@ class Stopwatch extends Component {
                         reset={ reset }
                     />
                 </div>
-                <div>
-                    <ul>
-                        <SplitTimeList 
-                            isRunning={ isRunning } 
-                            splitTimes={ splitTimes } 
-                            index={ index } 
-                            reset={ reset } 
-                        />
-                    </ul>
-                </div>
+            {
+                splitTimes.length ? (
+                    <div>
+                        <ul>
+                            <SplitTimeList 
+                                isRunning={ isRunning } 
+                                splitTimes={ splitTimes } 
+                                index={ index } 
+                                reset={ reset } 
+                            />
+                        </ul>
+                    </div>
+                ) : null
+            }
             </div>
         )
     }

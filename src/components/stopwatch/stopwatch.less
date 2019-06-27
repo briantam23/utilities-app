@@ -1,27 +1,35 @@
-.primaryContainer {
+@import '../home/home';
+
+
+.stopwatchContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: row;
   margin-top: 58px;
-}
+  justify-content: center;
 
-.secondaryContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 50px 75px;
-
-  .header {
-    color: steelblue;
-    font-size: 65px;
+  @media @wide-screen-down {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
-  .mainTime {
-    padding: 16px 32px;
-    color: darkslategray;
-    border: solid;
-    border-color: #FE5F55;
-    font-size: 45px;
+  .stopwatchDisplayContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 75px;
+
+    .header {
+      color: steelblue;
+      font-size: 65px;
+    }
+
+    .mainTime {
+      padding: 16px 32px;
+      color: darkslategray;
+      border: solid;
+      border-color: #FE5F55;
+      font-size: 45px;
+    }
   }
 }
-

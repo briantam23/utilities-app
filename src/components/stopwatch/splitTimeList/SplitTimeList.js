@@ -4,7 +4,7 @@ import formatTime from '../../../util/stopwatchUtil';
 
 
 const SplitTimeList = ({ splitTimes, isRunning, reset, index }) => (
-    <Fragment>
+    <div className={ style.splitContainer }>
 {
     splitTimes.map((splitTime, idx) => (
         <div className={ style.row } key={ idx }>
@@ -26,7 +26,7 @@ const SplitTimeList = ({ splitTimes, isRunning, reset, index }) => (
         </div>
     ))
 }
-    </Fragment>
+    </div>
 )
 
 
