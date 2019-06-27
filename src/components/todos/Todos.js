@@ -4,7 +4,7 @@ import { loadInitialTodos } from '../../store/actions/todos';
 import { Route } from 'react-router-dom';
 import style from './todos.less';
 import TodoList from './todoList/TodoList';
-import SingleTodo from './SingleTodo';
+import SingleTodo from './singleTodo/SingleTodo';
 
 
 class Todos extends Component {
@@ -18,8 +18,7 @@ class Todos extends Component {
         return(
             <div className={ style.todosContainer }>
                 <h1>Todos</h1>
-                <Route exact path='/todos' render={ () => <TodoList/> } />
-                <Route path='/todos/:todoId' render={ () => <SingleTodo/> } />
+                <TodoList/>
             </div>
         )
     }
