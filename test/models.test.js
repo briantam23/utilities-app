@@ -1,4 +1,4 @@
-'use strict';
+/* 'use strict';
 
 const chai = require('chai');
 const expect = chai.expect;
@@ -124,4 +124,4 @@ describe('The `Todo` model:', () => {
             expect(updatedTodo.assignee).to.equal('Johnny');
         })
     })
-})
+}) */
