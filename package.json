@@ -5,11 +5,13 @@
     "email": "briantam23@gmail.com",
     "url": "https://briantam23.github.io"
   },
-  "contributors": [{
-    "name": "Brian Tam",
-    "email": "briantam23@gmail.com",
-    "url": "https://briantam23.github.io"
-  }],
+  "contributors": [
+    {
+      "name": "Brian Tam",
+      "email": "briantam23@gmail.com",
+      "url": "https://briantam23.github.io"
+    }
+  ],
   "homepage": "https://btam-utilities-app.herokuapp.com",
   "version": "1.0.0",
   "description": "A Single Page App created with React, Redux, LESS, AWS S3, & D3, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.",
@@ -41,8 +43,14 @@
   ],
   "license": "ISC",
   "babel": {
-    "presets": ["env", "react", "stage-3"],
-    "plugins": ["transform-class-properties"]
+    "presets": [
+      "env",
+      "react",
+      "stage-3"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
   },
   "dependencies": {
     "aws-sdk": "^2.441.0",
@@ -55,7 +63,7 @@
     "file-type": "^10.11.0",
     "fs": "0.0.1-security",
     "jwt-simple": "^0.5.5",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.14",
     "multiparty": "^4.2.1",
     "pg": "^7.9.0",
     "react": "^16.4.1",
@@ -66,7 +74,7 @@
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "sequelize": "^5.3.0",
+    "sequelize": "^6.0.0",
     "volleyball": "^1.5.1"
   },
   "devDependencies": {
