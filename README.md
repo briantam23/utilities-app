@@ -32,6 +32,7 @@ This app requires a Ticketmaster API Key, S3 Bucket, AWS Access Key Id, AWS Secr
 
 ### Installation
 
+* `createdb utilities-app`
 * `npm install` (or `yarn install`)
 * `npm run start:dev`
 * open up [localhost:8080](http://localhost:8080) in a web browser
