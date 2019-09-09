@@ -8,9 +8,9 @@
 
 A Single Page App created with React, Redux, LESS, AWS S3, D3 and Media Queries, along with multiple Testing libraries (Enzyme, Mocha, Chai, Sinon, SuperTest), and Continuous Integration using TravisCI.
 
-![Home page screenshot](./public/img/screenshots/homepage_screen.png)
-![Stopwatch page screenshot](./public/img/screenshots/stopwatch_screen.png)
-![Events page screenshot](./public/img/screenshots/events_screen.png)
+![Home page screenshot](./public/img/screenshots/homepage_screen.png) <hr/>
+![Stopwatch page screenshot](./public/img/screenshots/stopwatch_screen.png) <hr/>
+![Events page screenshot](./public/img/screenshots/events_screen.png) <hr/>
 ![Todos page screenshot](./public/img/screenshots/todos_screen.png)
 
 ## Table of contents
