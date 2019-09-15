@@ -38,9 +38,9 @@ class ProfileForm extends Component {
         const { auth } = this.props;
         return(
             <div className={ style.profileFormContainer }>
-            {
-                !auth.id ? <h1>Create Profile</h1> : <h1>Edit Profile</h1>
-            }
+
+                { !auth.id ? <h1>Create Profile</h1> : <h1>Edit Profile</h1> }
+                
                 <form onSubmit={ handleSubmit } className={ style.authForm }>
                     <input 
                         onChange={ handleChange } 

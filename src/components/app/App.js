@@ -11,23 +11,21 @@ import Profile from '../profile/Profile';
 import style from './app.less'
 
 
-const App = () => {
-    return(
-        <Router>
-            <div className={ style.mainContainer }>
-                <Route render={ ({ history }) => <Auth history={ history }/> }/>
-                <Route render={ () => <Nav/> }/>
-                <Route exact path='/' render={ () => <Home/> }/>
-                <Route path='/stopwatch' render={ () => <Stopwatch/> }/>
-                <Route path='/ticketmaster-events' render={ () => <Events/> }/>
-                <Route path='/todos' render={ () => <Todos/> }/>
-                <Route path='/forecast' render={ () => <Forecast/> }/>
-                {/* <Route path='/sports' render={ () => <Sports/> }/> */}
-                <Route path='/my-profile' render={ () => <Profile/> }/>
-            </div>
-        </Router>
-    )
-}
+const App = () => (
+    <Router>
+        <div className={ style.mainContainer }>
+            <Route render={ ({ history }) => <Auth history={ history }/> }/>
+            <Route render={ () => <Nav/> }/>
+            <Route exact path='/' render={ () => <Home/> }/>
+            <Route path='/stopwatch' render={ () => <Stopwatch/> }/>
+            <Route path='/ticketmaster-events' render={ () => <Events/> }/>
+            <Route path='/todos' render={ () => <Todos/> }/>
+            <Route path='/forecast' render={ () => <Forecast/> }/>
+            {/* <Route path='/sports' render={ () => <Sports/> }/> */}
+            <Route path='/my-profile' render={ () => <Profile/> }/>
+        </div>
+    </Router>
+)
 
 
 export default App;

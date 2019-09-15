@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/briantam23/utilities-app.svg?branch=master)](https://travis-ci.org/briantam23/utilities-app)
-[![Known Vulnerabilities](https://app.snyk.io/test/github/briantam23/utilities-appp/badge.svg?targetFile=package.json)](https://app.snyk.io/test/github/briantam23/utilities-app?targetFile=package.json)
 [![Dependency Status](https://david-dm.org/briantam23/utilities-app.svg)](https://david-dm.org/briantam23/utilities-app)
 [![devDependencies Status](https://david-dm.org/briantam23/utilities-app/dev-status.svg)](https://david-dm.org/briantam23/utilities-app?type=dev)
 [![Code Climate](https://codeclimate.com/github/briantam23/utilities-app/badges/gpa.svg)](https://codeclimate.com/github/briantam23/utilities-app/)

@@ -13,15 +13,12 @@ class Auth extends Component {
     }
 
     componentDidUpdate = prevProps => {
-        const { auth } = this.props;
         if(prevProps !== this.props) {
-            if(auth.id) this.setState({ username: '', password: '', error: '' });
+            if(this.props.auth.id) this.setState({ username: '', password: '', error: '' });
         }
     }
 
-    handleChange = e => {
-        this.setState({ [e.target.name]: e.target.value });
-    }
+    handleChange = e => this.setState({ [e.target.name]: e.target.value });
     
     handleAuth = e => {
         e.preventDefault();
@@ -37,9 +34,7 @@ class Auth extends Component {
         ) : logout(history)
     }
 
-    handleClearError = () => {
-        this.setState({ error: '' });
-    }
+    handleClearError = () => this.setState({ error: '' });
 
     render() {
         const { username, password, error } = this.state;

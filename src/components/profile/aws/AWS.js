@@ -50,14 +50,14 @@ class AWS extends Component {
                     type='file' 
                     className={ style.awsUpload } 
                     name='file'
-                    />
+                />
                 <button disabled={ !file } className={ style.awsButton }>Upload</button>
             { 
                 success || error ? (
                     <div 
                         onClick={ () => handleClearStatus() } 
                         className={ success ? style.awsSuccess : style.awsError }
-                        >
+                    >
                         { success ? success + ' (X)' : error + ' (X)' } 
                     </div> 
                 ) : null 
