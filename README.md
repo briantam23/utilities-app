@@ -13,6 +13,7 @@ A Single Page App created with React, Redux, LESS, AWS S3, D3 and Media Queries,
 ![Todos page screenshot](./public/img/screenshots/todos_screen.png)
 
 ## Table of contents
+* [Motivation](#motivation)
 * [What is Amazon S3?](#what-is-amazon-s3?)
 * [Login Credentials](#login-credentials)
 * [Live Demo](#live-demo)
@@ -23,6 +24,9 @@ A Single Page App created with React, Redux, LESS, AWS S3, D3 and Media Queries,
 * [Deploying to Heroku](#deploying-to-heroku)
 * [Tests](#tests)
 * [Contact](#contact)
+
+## Motivation
+I wanted to maintain my skills and keep up with the latest technologies such as TravisCI, LESS, D3, & React Hooks.
 
 ## What is Amazon S3?
 Amazon Simple Storage Service is storage for the Internet. It is designed to make web-scale computing easier for developers.
