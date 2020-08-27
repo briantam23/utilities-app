@@ -64,7 +64,7 @@
     "file-type": "^10.11.0",
     "fs": "0.0.1-security",
     "jwt-simple": "^0.5.5",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.17",
     "multiparty": "^4.2.1",
     "pg": "^7.9.0",
     "react": "^16.9.0",
@@ -75,7 +75,7 @@
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "sequelize": "^6.0.0",
+    "sequelize": "^6.1.0",
     "volleyball": "^1.5.1"
   },
   "devDependencies": {
