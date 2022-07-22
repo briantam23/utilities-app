@@ -61,7 +61,7 @@
     "chalk": "^2.4.2",
     "dotenv": "^7.0.0",
     "express": "^4.16.3",
-    "file-type": "^10.11.0",
+    "file-type": "^16.5.4",
     "fs": "0.0.1-security",
     "jwt-simple": "^0.5.5",
     "lodash": "^4.17.14",
